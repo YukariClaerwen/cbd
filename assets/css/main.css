@@ -11,6 +11,9 @@
 .row{
 	margin:0 6%;
 }
+.bg-#fecc4f{
+	background-color: #fecc4f;
+}
 .time-info{
 	position: absolute;
 	top: 240px;
@@ -35,6 +38,9 @@ a{
 	text-decoration: none;
 }
 
+.h-700{
+	max-height: 700px;
+}
 .detail{
 	padding: 15px 5px;
 	float: right;
@@ -98,15 +104,20 @@ a{
 	margin-top: 25px;
 }
 .bg-new{
-	background-image: url("../images/bg-new.jpg");
+	background-image: url("../images/bg-new.jpg") ;
 	position: relative;
+	background-repeat: no-repeat;
+	height: 67vh;
+	width: 100vw;
+	background-size: cover;
 }
 .news{
 	/*position: absolute;
 	top: 150px;*/
-	
 }
 .news h1{
-	color: white;
+	color: #FFC30D;
 	font-weight: bold;
+	font-family: 'Oswald', sans-serif;
+	font-size: 150px;
 }
