@@ -1,0 +1,112 @@
+.imgview{
+	width: 100%;
+}
+.caption{
+	font-size: 15px;
+	padding: 10px;
+}
+.heading{
+	padding: 15px 0px
+}
+.row{
+	margin:0 6%;
+}
+.time-info{
+	position: absolute;
+	top: 240px;
+	background-color: rgba(43,41,44,.8);
+	padding: 20px;
+	width: 300px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.deliver-policy p{
+	display: none;
+}
+.deliver-policy:hover p{
+	display: inline-block;
+}
+a:hover{
+	text-decoration:none; 
+	color: grey;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+
+.detail{
+	padding: 15px 5px;
+	float: right;
+	margin-left: 5px;
+}
+.price{
+	font-size: 30px;
+	text-decoration: bold; 
+}
+.price-plus{
+	font-size: 30px;
+	text-decoration: bold;
+	margin: 10px 5px;	
+}
+.size,.amount,.add-topping{
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+}
+.radio-size{
+	float: right;
+}
+.radio-size label {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 25px!important;
+    text-align: center!important;
+    border: solid 2px #2B292C;
+}
+.radio-size input[type=radio]{
+	display: none;
+}
+.btn-amount{
+	height: 30px;
+	width: 30px;
+	background-color: black;
+	color: white;
+}
+.input-group{
+	float: right;
+	width: 100px;
+}
+.input-group input[type=text]{
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
+}
+.add-topping .dropdown{
+	float: right;
+}
+.dropdown-child{
+	border: 1px solid grey;
+	background-color: white;
+	width: 200px;
+}
+.btn-chon{
+	margin-top: 25px;
+}
+.bg-new{
+	background-image: url("../images/bg-new.jpg");
+	position: relative;
+}
+.news{
+	/*position: absolute;
+	top: 150px;*/
+	
+}
+.news h1{
+	color: white;
+	font-weight: bold;
+}
