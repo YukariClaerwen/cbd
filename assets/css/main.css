@@ -55,8 +55,7 @@ a{
 	text-decoration: bold;
 	margin: 10px 5px;	
 }
-.size,.amount,.add-topping{
-	display: block;
+.size ,.amount,.add-topping label{
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -76,6 +75,10 @@ a{
 }
 .radio-size input[type=radio]{
 	display: none;
+}
+.radio-size input[type=radio]:focus{
+	color: white;
+	background-color: black;
 }
 .btn-amount{
 	height: 30px;
@@ -120,4 +123,75 @@ a{
 	font-weight: bold;
 	font-family: 'Oswald', sans-serif;
 	font-size: 150px;
+}
+.bg-contact{
+	background-image: url("../images/bg-contact1.jpg");
+	background-size: cover;
+	color: white;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+}
+form#fContact{
+	font-size: 18px;
+}
+form#fContact div input{
+	border: none;
+	border-bottom: 1px solid;
+	width: 100%;
+	color: white;
+	outline: none;
+	background: transparent;
+	height: 50px;
+}
+form#fContact div input:focus,form#fContact div textarea:focus{ 
+	color: #ffc30d;
+}
+form#fContact div textarea{
+	border: none;
+	border-bottom: 1px solid;
+	width: 100%;
+	color: white;
+	outline: none;
+	background: transparent;
+}
+
+.btn-pri, .btn-sec {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffc30d;
+    font-weight: bold;
+    border: 2px solid #ffc30d;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    padding: .5rem 1.5rem;
+}
+.btn-sec {
+    color: #fff;
+    border: 2px solid #fff;
+}
+.btn-pri:not(:disabled):not(.disabled).active:focus, 
+.btn-pri:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,195,13,.5);
+}
+.btn-pri:not(:disabled):not(.disabled).active, 
+.btn-pri:not(:disabled):not(.disabled):active, 
+.show>.btn-pri.dropdown-toggle {
+    color: #000;
+    background-color: #ffd147;
+    border-color: #ffc30d;
+}
+.btn-pri.focus, .btn-pri:focus {
+    color: #000;
+    background-color: #ffc30d;
+    border-color: #ffc30d;
+    box-shadow: 0 0 0 0.2rem rgba(255,195,13,.5);
+}
+.btn-pri:hover {
+    color: #000;
+    background-color: #ffd147;
+    border-color: #ffc30d;
 }
