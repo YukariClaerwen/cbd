@@ -86,6 +86,16 @@ a:hover {
 a.dropdown-toggle {
     color: white;
 }
+.dropdown-menu {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border: none;
+    border-top: 3px solid #ffc30d;
+
+}
 .shopping-cart .cart-amount {
     position: absolute;
     top: -5px;
