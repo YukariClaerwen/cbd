@@ -9,12 +9,62 @@
     <link rel="stylesheet" href="assets/libs//boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/libs/fontawesome/css/all.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
 <body>
-    <!-- Start -->
+	<!-- Start -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top my-nav justify-content-between">
+        <a class="navbar-brand" href="index.html">
+            <img class="nav-logo nav-logo-white" src="assets/images/logo_white_203x300.png" alt="">
+            <img class="nav-logo nav-logo-color" src="assets/images/logo_yellow_203x300.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto px-3">
+                <li class="nav-item px-3 active">
+                    <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="#about">Về chúng tôi</a>
+                </li>
+                <li class="nav-item px-3 dropdown">
+                    <a class="nav-link dropdown-toggle" href="menu.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Đặt hàng
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="news.html">Tin tức</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                </li>
+            </ul>
+            <div class="shopping-cart px-3">
+                <a class="header-cart" href="chitietgiohang.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-amount" id="amount" data-soluong="0">0</span>
+                </a>
+                <div class="shopping-desc px-3 pt-3 text-muted">
+                    <p>Không có sản phẩm trong giỏ hàng.</p>
+                </div>
+            </div>
+            <div class="px-3">
+                <button id="login" type="button" class="btn btn-pri btn-border"  data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
+            </div>
+        </div>
+    </nav>
     <div class="container-fluid">
-    	<nav class="navbar navbar-light bg-light fixed-top">
+    	<nav class="navbar navbar-light bg-light fixed-bottom">
     		<a href="" class="navbar-brand">
     			<img src="assets/images/logo.jpg" class="d-inline-block align-top" width="80px" height="80px">
     		</a>
