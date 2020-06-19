@@ -99,8 +99,8 @@ a.dropdown-toggle {
 .shopping-cart .cart-amount {
     position: absolute;
     top: -5px;
-    right: 5px;
     font-size: 10px;
+    right: 5px;
     color: #fff;
     background-color: #ffc30d;
     display: inline-block;
@@ -131,3 +131,19 @@ a.dropdown-toggle {
     background: rgba(0,0,0,0.5);
 }
 /* END TOP */
+table#tCTGH td{
+    min-width: 50px;
+    padding: 15px;
+}
+table#tCTGH thead tr:first-child{
+    border-bottom: 2px solid grey;
+}
+table#tCTGH tbody tr{
+    border-bottom: 1px solid grey;
+}
+table#tCTGH textarea{
+    width: 100%;
+}
+table#tCTGH tfoot tr:last-child{
+    border-top: 2px solid grey;
+}
