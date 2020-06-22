@@ -357,7 +357,7 @@ table#tCTGH tfoot tr:last-child{
     background: transparent;
     padding: 0;
 }
-.input ~ label {
+.input + label {
     position: absolute;
     display: block;
     width: 100%;
@@ -366,7 +366,7 @@ table#tCTGH tfoot tr:last-child{
     left: 0;
     pointer-events: none;
 }
-.input ~ label:after{
+.input + label:after{
     color: #999999;
     content: attr(data-placeholder);
     display: block;
@@ -384,8 +384,11 @@ table#tCTGH tfoot tr:last-child{
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     -ms-transition: all 0.4s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
-.input ~ label:before {
+.input + label:before {
     content: "";
     display: block;
     position: absolute;
