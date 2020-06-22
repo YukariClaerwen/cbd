@@ -75,9 +75,9 @@ a{
     border: solid 2px #2B292C;
 }
 .radio-size input[type=radio]{
-	display: none;
-}
-.radio-size input[type=radio]:focus{
+	visibility: hidden;
+	}
+.radio-size input[type=radio]:checked + label{
 	color: white;
 	background-color: black;
 }
