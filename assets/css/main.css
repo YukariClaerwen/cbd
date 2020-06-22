@@ -16,11 +16,12 @@
 }
 .time-info{
 	position: absolute;
-	top: 240px;
+	bottom: 10%;
+	left: 0;
 	background-color: rgba(43,41,44,.8);
 	padding: 20px;
 	width: 300px;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 }
 .deliver-policy p{

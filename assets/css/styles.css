@@ -195,10 +195,26 @@ a.header-cart {
     color: #333;
 }
 
+.products-nav {
+    background: #372519;
+}
+.products-nav .nav-link {
+    text-transform: uppercase;
+    color: white;
+}
+.products-nav .nav-item .active {
+    background:#ffc30d;
+    color: #333;
+}
+
 /* end head navbar */
 /* SECTION */
 .section {
     background: #eae7de;
+    position: relative;
+}
+.drinks .section:nth-child(odd) {
+    background: white;
 }
 .section .bg-image {
     background: url("../images/bg.jpg") repeat;
@@ -252,6 +268,11 @@ a.header-cart {
 .section-top .container-fluid {
     background: rgba(0,0,0,0.5);
 }
+.section-top.section-drinks {
+    background: url("../images/background2.jpg") center center no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
 /* END TOP */
 table#tCTGH td{
     min-width: 50px;
@@ -271,6 +292,35 @@ table#tCTGH tfoot tr:last-child{
 }
 
 /* footer */
+.topbtn {
+    position: fixed;
+    background: #ffc30d;
+    color: #333;
+    bottom: 3%;
+    right: 5%;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    z-index:1035;
+    visibility: hidden;
+    height: 3rem;
+    width: 3rem;
+    opacity: 0;
+    transition: visibility 0.3s linear,opacity 0.3s linear;
+    -webkit-transition: visibility 0.3s linear,opacity 0.3s linear;
+    -moz-transition: visibility 0.3s linear,opacity 0.3s linear;
+    -ms-transition: visibility 0.3s linear,opacity 0.3s linear;
+    -o-transition: visibility 0.3s linear,opacity 0.3s linear;
+}
+.topbtn:hover {
+    background: #ffd147;
+    color: #333;
+}
+.footer {
+    background: #493121!important;
+}
 .footer img {
     height: 150px;
     width: auto;

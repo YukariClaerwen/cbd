@@ -1,8 +1,7 @@
 $(document).ready(function () {
     'use strict';
-    
-     var c, currentScrollTop = 0,
-        navbar = $('nav').not('.my-subnav');
+    var c, currentScrollTop = 0,
+        navbar = $('nav').not('.products-nav');
   
     $(window).scroll(function () {
         var a = $(window).scrollTop();
@@ -15,11 +14,19 @@ $(document).ready(function () {
         if (c < currentScrollTop && a > b + b) {
             navbar.addClass("scrollUp").removeClass('scrollDown');
             navbar.find("button").removeClass('btn-border');
+            $(".topbtn").css({
+                'visibility': 'visible',
+                'opacity': 1
+            });
         } else if (c > currentScrollTop && !(a <= b)) {
             navbar.addClass('scrollDown').removeClass("scrollUp");
         } else if (a < b) {
             navbar.removeClass('scrollDown');
             navbar.find("button").addClass('btn-border');
+            $(".topbtn").css({
+                'visibility' : 'hidden',
+                'opacity': 0
+            });
         }
         c = currentScrollTop;
     });
@@ -58,6 +65,12 @@ $(document).ready(function () {
                 $(this).removeClass('has-val');
             }
         })
+    })
+
+    var prodNavH = $('.products-nav').height();
+
+    $('.footer').css({
+        'margin-bottom': prodNavH
     })
 });
 
