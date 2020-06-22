@@ -87,10 +87,10 @@ a{
 	background-color: black;
 	color: white;
 }
-.input-group{
+/* .input-group{
 	float: right;
 	width: 100px;
-}
+} */
 .input-group input[type=text]{
 	width: 30px;
 	height: 30px;
