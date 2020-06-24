@@ -91,45 +91,61 @@
 		</ul>  		
 	</nav>
 	<!-- End menu navbar -->
-	<div class="container-fluid">
-    	<img src="assets/images/bg-menu.jpg" width="100%" height="780px">
+	<!-- Head background -->
+	<div class="section section-top section-drinks"">
+        <div class="container-fluid d-flex justify-content-center align-items-center h-100">
+            <div class="w-75 text-center"></div>
+		</div>
+		<div class="time-info">
+			<div class=time-off>
+				<h4>Thời gian hoạt động</h4>
+				<p>9:30AM-9:00PM</p>
+			</div>
+			<hr>
+			<div class="deliver-policy">
+				<h4>Chính sách giao hàng</h4>
+				<p>Miễn phí giao hàng trong bán kính 2km cho đơn hàng từ 100.000đ</p>
+			</div>	
+    	</div>
     </div>
+	<!-- End head background -->
     <!-- Detail -->
-    <div class="container">
-	    <div class="col-12 my-4"></div>
-	   	<div class="row row-cols-2 h-700 gutter-10">
-	<!--Hình -->   		
+    <div class="container p-5 clearfix product-details">
+	   	<div class="row row-cols-2 py-5">
+	        <!--Hình -->   		
 	   		<div class="col-lg-7 col-md-7 col-sm-7 col-12 ">
-	   			<img src="assets/images/drink3.jpg" class="img-fluid" >
+	   			<img src="assets/images/drinks/001.jpg" class="img-fluid" >
 	   		</div>
-	<!-- Thông tin chi tiết -->	   		
-	   		<div class="col-lg-5 col-md-5 col-sm-5 col-12 ">
-	   			<h1 class="heading">Cappucino</h1>
-	   			<div class="price">
-	   				<span>31000</span>
-	   				<small>&nbsp;VND</small>
-	   			</div>
-	   			<div class="price-plus">+0 VND</div>
-	<!-- Form -->   			
+	        <!-- Thông tin chi tiết -->	   		
+	   		<div class="col-lg-5 col-md-5 col-sm-5 col-12 pt-0">
+	   			<div class="product-name mb-3">Mr.Oreo</div>
+	   			<div class="product-price" data-size="S">31000</div>
+	   			<div class="product-price" data-size="G" style="display: none">55000</div>
+	   			<div class="product-plus">+0 VND</div>
+	            <!-- Form -->   			
 	   			<form>	   				
 	   				<!-- Size -->
-	   				<div class="size"> 
+	   				<div class="size mt-5 d-flex justify-content-between"> 
 	   					<label>Size</label>
 	   					<div class="radio-size">
-	   						<input type="radio" name="sizename" id="sizeM" value="m" checked="checked">
-	   						<label for="sizeM">M</label>
-	   						<input type="radio" name="sizename" id="sizeL" value="l">
-	   						<label for="sizeL">L</label>
+	   						<input type="radio" name="sizename" id="sizeS" value="S" checked="checked">
+	   						<label for="sizeS">S</label>
+	   						<input type="radio" name="sizename" id="sizeG" value="G">
+	   						<label for="sizeG">G</label>
 	   					</div>
    					</div>
 	   				<hr>
 	   				<!-- Số lượng -->
-   					<div class="amount">
+   					<div class="amount d-flex justify-content-between">
    						<label>Số lượng</label>
-   						<div class="input-group" align="center">
-   							<div class="btn-amount"><i class="fa fa-plus"></i></div>
-   							<input type="text" name="amount" value="1" vlaue="1" readonly>
-   							<div class="btn-amount"><i class="fa fa-minus"></i></div>
+   						<div class="d-flex justify-content-end text-center align-items-stretch">
+   							<div class="btn btn-amount p-0" data-btn="plus">
+                                <i class="fa fa-plus fa-xs"></i>
+                            </div>
+   							<input class="form-control" type="text" name="amount" value="1">
+   							<div class="btn btn-amount p-0" data-btn="minus">
+                                <i class="fa fa-minus fa-xs"></i>
+                            </div>
    						</div>
    					</div>
    					<hr>
@@ -173,7 +189,8 @@
    					</div>
 	   			</form>
 	   		</div>
-	   	</div>
+           </div>
+           <div class="w-100 py-5"></div>
 	</div>
 
 

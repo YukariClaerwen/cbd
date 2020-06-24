@@ -72,5 +72,43 @@ $(document).ready(function () {
     $('.footer').css({
         'margin-bottom': prodNavH
     })
+
+    // format price
+    $(".product-price").each(function(){
+        var total = $(this).text();
+        $(this).html(PriceFormat(total, " VND"));
+    })
+
+    //size
+    $('input[type=radio][name=sizename]').change(function() {
+        if (this.value == 'S') {
+            $(".product-price").hide();
+            $(".product-price[data-size=S]").show();
+        }
+        else if (this.value == 'G') {
+            $(".product-price").hide();
+            $(".product-price[data-size=G]").show();
+            
+        }
+    });
+
+    //số lượng
+    
+    $('input[name=amount]').val(1);
+    $('.btn-amount').click(function(){
+        var action = $(this).data('btn');
+        var amount = $('input[name=amount]').val();
+        if(action == 'plus')
+            amount++;
+        else if (action == 'minus')
+            amount--;
+        if (amount < 1)
+            amount = 1;
+        $('input[name=amount]').val(amount);
+            
+    })
 });
 
+function PriceFormat(price, currency){
+    return "<span>" + parseFloat(price, 10).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,").toString() + "</span><span>" + currency + "</span>";
+}
