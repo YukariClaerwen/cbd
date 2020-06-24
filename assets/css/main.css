@@ -72,8 +72,7 @@ a{
     height: 30px;
     line-height: 25px!important;
     text-align: center!important;
-	border: solid 2px #2B292C;
-	cursor: pointer;
+    border: solid 2px #2B292C;
 }
 .radio-size input[type=radio]{
 	display	: none;
@@ -91,15 +90,6 @@ a{
 	width: 30px;
 	background-color: black;
 	color: white;
-	border-radius: 0;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	-ms-border-radius: 0;
-	-o-border-radius: 0;
-}
-.btn-amount:hover {
-	background: #fecc4f;
-	color: #333;
 }
 /* .input-group{
 	float: right;
@@ -190,4 +180,5 @@ table#tTuyenDung tr td:nth-child(even),table#tLSDH tr td:nth-child(even) {
 
 #Profile .nav-link.active{
 	border-bottom: 3px solid #ffc30d;
+	background-color: transparent;
 }

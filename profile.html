@@ -17,7 +17,7 @@
 
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="section container-fluid">
 		<div class="w-100 my-4" align="center"><h1 class="display-1">Thông tin tài khoản</h1></div>
 		<div class="row">
 	        <div class="col-md-12">
@@ -32,24 +32,29 @@
 	            <div class="tab-content" id="nav-tabContent">
 	                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 	                    <form id="fProfile">
-                            <div class="form-group mt-2">
-                                <input type="text" class="form-control input" id="Fullname" aria-describedby="fullnameHelp" value="User1" readonly>
-                                <label for="Fullname" data-placeholder="Họ tên"></label>
+	                    	<div class="form-group mt-2">
+                                <input type="text" class="form-control input" id="Id-Pr" aria-describedby="IdHelp" value="1" readonly="readonly">
+                                <label for="Id-Pr" data-placeholder="Mã tài khoản"></label>
                             </div>
                             <div class="form-group mt-4">
-                                <input type="text" class="form-control input" id="Phonen" aria-describedby="phoneHelp" value="0123456789" readonly="readonly">
-                                <label for="Phone" data-placeholder="Số diện thoại"></label>
+                                <input type="text" class="form-control input" id="Fullname-Pr" aria-describedby="fullnameHelp" value="User1" readonly="readonly">
+                                <label for="Fullname-Pr" data-placeholder="Họ tên"></label>
                             </div>
                             <div class="form-group mt-4">
-                                <input type="email" class="form-control input" id="EmailRegister" aria-describedby="emailHelp" value="user1@gmail.com" readonly="readonly">
-                                <label for="EmailRegister" data-placeholder="Email"></label>
+                                <input type="text" class="form-control input" id="Phonen-Pr" aria-describedby="phoneHelp" value="0123456789" readonly="readonly">
+                                <label for="Phonen-Pr" data-placeholder="Số diện thoại"></label>
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="email" class="form-control input" id="Email-Pr" aria-describedby="emailHelp" value="user1@gmail.com" readonly="readonly">
+                                <label for="Email-Pr" data-placeholder="Email"></label>
                             </div>
                             <div class="form-group mt-4">
                                 <input type="email" class="form-control input" id="Discount" aria-describedby="emailHelp" value="15%" readonly="readonly">
                                 <label for="Discount" data-placeholder="Chiết khấu"></label>
                             </div>
                             <div class="mt-4 d-flex justify-content-center">
-                                <button type="button" id="btnTaoTaiKhoan" class="btn btn-pri">Sửa thông tin</button>
+                                <button type="button" id="btnSuaThongTin" class="btn btn-pri">Sửa thông tin</button>
+                                <button type="button" id="btnLuuThongTin" class="btn btn-pri mx-1" style="display: none;">Lưu thông tin</button>
                             </div>
                         </form>
 	                </div>
@@ -57,19 +62,19 @@
 		            <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 	                    <form id="fPassword">
 	                        <div class="form-group mt-4">
-	                            <input type="password" class="form-control input" id="PasswordRegister1">
-	                            <label for="PassworRegister1" data-placeholder="Nhập mật khẩu hiện tại"></label>
+	                            <input type="password" class="form-control input" id="PasswordRecent">
+	                            <label for="PasswordRecent" data-placeholder="Nhập mật khẩu hiện tại"></label>
 	                        </div>
 	                        <div class="form-group mt-4">
-	                            <input type="password" class="form-control input" id="PasswordRegister1">
-	                            <label for="PassworRegister1" data-placeholder="Nhập mật khẩu mới"></label>
+	                            <input type="password" class="form-control input" id="NewPasswor1">
+	                            <label for="NewPasswor1" data-placeholder="Nhập mật khẩu mới"></label>
 	                        </div>
 	                        <div class="form-group mt-4">
-	                            <input type="password" class="form-control input" id="PasswordRegister2">
-	                            <label for="PassworRegister2" data-placeholder="Nhập lại mật khẩu mới"></label>
+	                            <input type="password" class="form-control input" id="NewPasswor2">
+	                            <label for="NewPasswor2" data-placeholder="Nhập lại mật khẩu mới"></label>
 	                        </div>
 	                        <div class="mt-4 d-flex justify-content-center">
-	                            <button type="button" id="btnTaoTaiKhoan" class="btn btn-pri">Đổi mật khẩu</button>
+	                            <button type="button" id="btnDoiMatKhau" class="btn btn-pri">Đổi mật khẩu</button>
 	                        </div>
 	                    </form>
 	                </div>
