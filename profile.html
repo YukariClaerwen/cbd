@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thông tin cá nhân </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/libs//boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="w-100 my-4" align="center"><h1 class="display-1">Thông tin tài khoản</h1></div>
+		<div class="row">
+	        <div class="col-md-12">
+	            <nav id="Profile">
+	                <div class="nav nav-tabs nav-fill mb-2" id="nav-tab" role="tablist">
+	                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Thông tin tài khoản</a>
+	                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Mật khẩu</a>
+	                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Lịch sử</a>
+	                </div>
+	            </nav>
+
+	            <div class="tab-content" id="nav-tabContent">
+	                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+	                    <form id="fProfile">
+                            <div class="form-group mt-2">
+                                <input type="text" class="form-control input" id="Fullname" aria-describedby="fullnameHelp" value="User1" readonly>
+                                <label for="Fullname" data-placeholder="Họ tên"></label>
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="text" class="form-control input" id="Phonen" aria-describedby="phoneHelp" value="0123456789" readonly="readonly">
+                                <label for="Phone" data-placeholder="Số diện thoại"></label>
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="email" class="form-control input" id="EmailRegister" aria-describedby="emailHelp" value="user1@gmail.com" readonly="readonly">
+                                <label for="EmailRegister" data-placeholder="Email"></label>
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="email" class="form-control input" id="Discount" aria-describedby="emailHelp" value="15%" readonly="readonly">
+                                <label for="Discount" data-placeholder="Chiết khấu"></label>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-center">
+                                <button type="button" id="btnTaoTaiKhoan" class="btn btn-pri">Sửa thông tin</button>
+                            </div>
+                        </form>
+	                </div>
+
+		            <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+	                    <form id="fPassword">
+	                        <div class="form-group mt-4">
+	                            <input type="password" class="form-control input" id="PasswordRegister1">
+	                            <label for="PassworRegister1" data-placeholder="Nhập mật khẩu hiện tại"></label>
+	                        </div>
+	                        <div class="form-group mt-4">
+	                            <input type="password" class="form-control input" id="PasswordRegister1">
+	                            <label for="PassworRegister1" data-placeholder="Nhập mật khẩu mới"></label>
+	                        </div>
+	                        <div class="form-group mt-4">
+	                            <input type="password" class="form-control input" id="PasswordRegister2">
+	                            <label for="PassworRegister2" data-placeholder="Nhập lại mật khẩu mới"></label>
+	                        </div>
+	                        <div class="mt-4 d-flex justify-content-center">
+	                            <button type="button" id="btnTaoTaiKhoan" class="btn btn-pri">Đổi mật khẩu</button>
+	                        </div>
+	                    </form>
+	                </div>
+
+		            <div class="tab-pane fade " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+	        			<table id="tLSDH" class="mx-auto">
+							<thead>
+								<tr>
+									<th>Mã đơn hàng</th>
+									<th>Số lượng</th>
+									<th>Thành tiền</th>
+									<th>Trạng thái</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										ABC123
+									</td>
+									<td>
+										5
+									</td>
+									<td>
+										155.000 <span>VNĐ</span>
+									</td>
+									<td>
+										Hoàn thành
+									</td>
+								</tr>
+								<tr>
+									<td>
+										ABC123
+									</td>
+									<td>
+										5
+									</td>
+									<td>
+										155.000 <span>VNĐ</span>
+									</td>
+									<td>
+										Hoàn thành
+									</td>
+								</tr>
+								<tr>
+									<td>
+										ABC123
+									</td>
+									<td>
+										5
+									</td>
+									<td>
+										155.000 <span>VNĐ</span>
+									</td>
+									<td>
+										Hoàn thành
+									</td>
+								</tr>
+							</tbody>
+						</table>            
+	                </div>
+	            </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="assets/libs/popper/popper.min.js"></script>
+    <script src="assets/libs/boostrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/js.js"></script>
+
+<!-- End every page -->
+</body>
+</html>
