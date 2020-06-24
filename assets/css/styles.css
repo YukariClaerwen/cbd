@@ -200,7 +200,8 @@ a.header-cart {
     text-transform: uppercase;
     color: white;
 }
-.products-nav .nav-item .active {
+.products-nav .nav-item:hover .nav-link,
+.products-nav .nav-item .nav-link.active {
     background:#ffc30d;
     color: #333;
 }
