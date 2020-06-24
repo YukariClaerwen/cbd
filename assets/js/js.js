@@ -60,13 +60,14 @@ $("#btnTaoTaiKhoan").click(function(){
 			return true;			
 	}
 /* --------------------------------------------------ĐĂNG NHẬP----------------------------------------------------------------- */		
-	function User(Email,Matkhau,Hoten){
+	function User(Id,Email,Matkhau,Hoten){
+		this.id=Id;
 		this.email=Email;
 		this.matkhau=Matkhau;
 		this.hoten=Hoten;
 	}
-	var listusers=[new User("user1@gmail.com","123456","user1"),
-					new User("user2@gmail.com","456789","user2")
+	var listusers=[new User("1","user1@gmail.com","123456","user1"),
+					new User("2","user2@gmail.com","456789","user2")
 				  ];
 
 	$("#btnDangNhap").click(function () {
@@ -74,13 +75,18 @@ $("#btnTaoTaiKhoan").click(function(){
 		for (var i = 0; i < listusers.length; i++) {
 			if($("#EmailLogin").val()==listusers[i].email && $("#PasswordLogin").val()==listusers[i].matkhau){
 				found=true;
+				$("#demo").text(listusers[i].hoten);
 				break;
 			}
 		}
 		if(found==false)
 			alert("Email/Mật khẩu chưa đúng");
-		else
+		else{
+			$("#loginModal").modal("hide");
+			$("#taikhoan").show();
+			$("#login").hide();
 			alert("Bạn đã đăng nhập thành công");
+		}
 	})
 
 /* --------------------------------------------------GƯI GÓP Ý----------------------------------------------------------------- */	
@@ -140,3 +146,86 @@ $("#btnSend").click(function() {
 		else
 		alert("Bạn đã gửi CV thành công");
 	})
+/* --------------------------------------------------ĐỔI MẬT KHẨU----------------------------------------------------------------- */	
+$("#btnDoiMatKhau").click(function () {
+	var len=$("#fPassword").find("input").length;
+	var err="";
+	var found=false,check=false;
+	var mail="user1@gmail.com";
+	for (var i = 0; i <len; i++) {
+			if($("#fPassword input").eq(i).val().replace(/^\s+|\s+$/g, "")==0){
+				found=true;
+				break;
+			}
+			else{
+				found=false;
+			}
+		}
+	if(found==true)
+		err="Vui lòng nhập đầy đủ thông tin \n";
+	else{
+		for( var i=0; i<listusers.length;i++){
+			if( listusers[i].email==mail && $("#PasswordRecent").val() == listusers[i].matkhau){
+				check=true;
+				break;
+			}else{
+				err+="Mật khẩu cũ chưa đúng \n";
+				check=false;
+			}
+			if(check==false){
+				if(checkPass($("#NewPasswor1").val())==false)
+					err+="Mật khẩu phải chứa ít nhất 6 ký tự \n"
+				if(checkpass($("#NewPasswor1").val(),$("#NewPasswor2").val())==false)
+					err+="Mật khẩu nhập lại chưa khớp \n";
+			}
+		}
+	}
+
+	if(err=="")
+		alert("Đổi mật khẩu thành công");
+	else
+		alert(err);
+})
+/* --------------------------------------------------SỬA THÔNG TIN----------------------------------------------------------------- */
+$("#btnSuaThongTin").click(function() {
+	$("#Fullname-Pr").prop('readonly',false);
+	$("#Phonen-Pr").prop('readonly',false);
+	$("#Email-Pr").prop('readonly',false);
+	$("#btnLuuThongTin").show();
+})
+$("#btnLuuThongTin").click(function() {
+	var len=$("#fProfile").find("input").length;
+	var err="";
+	var found=false,check=false;
+	for (var i = 0; i <len; i++) {
+			if($("#fProfile input").eq(i).val().replace(/^\s+|\s+$/g, "")==0){
+				found=true;
+				break;
+			}
+			else{
+				found=false;
+			}
+		}
+	if(found==true)
+		err="Vui lòng nhập thông tin đầy đủ";
+	else{
+		if(checkphone($("#Phonen-Pr").val()) ==false || $("#Phonen-Pr").val().length!=10 )
+			err+="Số điện thoại sai/ chưa đủ số.\n"
+		if (!checkEmail($ ("#Email-Pr").val()))
+			err+="Sai định dạng email.Vui lòng nhập lại.\n";
+	}
+	if(err!="")
+		alert(err);
+	else{
+		var confir = confirm("Bạn muốn lưu thông tin đã thay đổi?");
+		if(confir==true){
+			alert("Lưu thông tin thành công");
+			$("#Fullname-Pr").prop('readonly',true);
+		}
+		else
+			$("#Fullname-Pr").prop('readonly',true);
+			$("#Phonen-Pr").prop('readonly',true);
+			$("#Email-Pr").prop('readonly',true);
+			$("#btnLuuThongTin").hide();
+	}		
+})
