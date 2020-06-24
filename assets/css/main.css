@@ -75,8 +75,8 @@ a{
     border: solid 2px #2B292C;
 }
 .radio-size input[type=radio]{
-	visibility: hidden;
-	}
+	display	: none;
+}
 .radio-size input[type=radio]:checked + label{
 	color: white;
 	background-color: black;
