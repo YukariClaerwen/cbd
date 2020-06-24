@@ -56,7 +56,7 @@ a{
 	text-decoration: bold;
 	margin: 10px 5px;	
 }
-.size ,.amount,.add-topping label{
+.size ,.amount, label.topping{
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -80,7 +80,11 @@ a{
 }
 .radio-size input[type=radio]:checked + label{
 	color: white;
-	background-color: black;
+	background-color: rgb(73, 65, 65);
+}
+.radio-size label:hover {
+	background: #ffc30d;
+	color: #333;
 }
 .btn-amount{
 	height: 30px;

@@ -52,7 +52,7 @@ $(document).ready(function () {
     // })
 
     
-    $("input").each(function(){
+    $(".input").each(function(){
         if ($(this).val().trim() != "") {
             $(this).addClass('has-val');
         } else {
@@ -106,6 +106,30 @@ $(document).ready(function () {
             amount = 1;
         $('input[name=amount]').val(amount);
             
+    })
+
+    $(document).on('click', '#toppings .dropdown-menu', function (e) {
+        e.stopPropagation();
+    });
+    $('input[data-type=topping]').change(function(){
+        var div = $("<div>")
+        var num = $('#plus').attr("data-plus");
+        var name = $(this).attr("data-name");
+        var price = $(this).attr("data-price");
+        
+        var plus = "<span class='text-success'>+ " + PriceFormat(price, " VND") + "</span> " + name;
+        if ($(this).is(':checked')) {
+            if(num == 0){
+                $("#plus").empty();
+            } 
+            num++
+            div.attr("data-name", name).html(plus);
+            $("#plus").attr("data-plus",num).append(div);
+        } else {
+            num--
+            $("#plus").attr("data-plus",num);
+            $("div[data-name='"+name+"']").remove();
+        }
     })
 });
 
