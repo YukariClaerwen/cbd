@@ -469,7 +469,11 @@ textarea {
     width: 100%;
     border: none;
     border-bottom: 1px solid #dcdcdc;
+    background-color: transparent;
+    outline: none;
+    color: #999999;
 }
+
 
 /* modal */
 .closeModal {
