@@ -131,6 +131,9 @@ $(document).ready(function () {
             $("div[data-name='"+name+"']").remove();
         }
     })
+    $("#add-product").on("click", function(){
+        
+    })
 });
 
 function PriceFormat(price, currency){

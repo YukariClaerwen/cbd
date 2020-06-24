@@ -56,6 +56,7 @@
             </div>
             <div class="px-3">
                 <button id="login" type="button" class="btn btn-pri btn-border"  data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
+                <div id="taikhoan" style="display: none;"><a href="profile.html" id="demo" class="text-white "><i class="far fa-user"></i></a></div>
             </div>
         </div>
     </nav>
@@ -209,7 +210,7 @@
                     </div>
                        
                     <div class="mt-5">
-                        <button type="button" class="btn btn-pri btn-lg">Thêm vào giỏ hàng</button>
+                        <button type="button" class="btn btn-pri btn-lg" id="add-product">Thêm vào giỏ hàng</button>
                     </div>
 	   			</form>
 	   		</div>
@@ -264,67 +265,67 @@
     <!-- Login modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="closeModal">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body pt-4">
-                <ul class="nav nav-tabs justify-content-center" id="loginTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="home" aria-selected="true">Đăng nhập</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="profile" aria-selected="false">Tạo tài khoản</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="loginTabContent">
-                    <div class="tab-pane fade show active p-3" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-                        <form>
-                            <div class="form-group mt-2">
-                                <input type="email" class="form-control input" id="EmailLogin" aria-describedby="emailHelp">
-                                <label for="EmailLogin" data-placeholder="Email"></label>
-                            </div>
-                            <div class="form-group mt-4">
-                                <input type="password" class="form-control input" id="PasswordLogin">
-                                <label for="PasswordLogin" data-placeholder="Mật khẩu"></label>
-                            </div>
-                            <div class="mt-4 d-flex justify-content-center">
-                                <button type="button" class="btn btn-pri">Đăng nhập</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="tab-pane fade p-3" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-                        <form>
-                            <div class="form-group mt-2">
-                                <input type="text" class="form-control input" id="Fullname" aria-describedby="fullnameHelp">
-                                <label for="Fullname" data-placeholder="Họ tên"></label>
-                            </div>
-                            <div class="form-group mt-4">
-                                <input type="text" class="form-control input" id="Phonen" aria-describedby="phoneHelp">
-                                <label for="Phone" data-placeholder="Số diện thoại"></label>
-                            </div>
-                            <div class="form-group mt-4">
-                                <input type="email" class="form-control input" id="EmailRegister" aria-describedby="emailHelp">
-                                <label for="EmailRegister" data-placeholder="Email"></label>
-                            </div>
-                            <div class="form-group mt-4">
-                                <input type="password" class="form-control input" id="PasswordRegister1">
-                                <label for="PassworRegister1" data-placeholder="Mật khẩu"></label>
-                            </div>
-                            <div class="form-group mt-4">
-                                <input type="password" class="form-control input" id="PasswordRegister2">
-                                <label for="PassworRegister2" data-placeholder="Nhập lại mật khẩu"></label>
-                            </div>
-                            <div class="mt-4 d-flex justify-content-center">
-                                <button type="button" class="btn btn-pri">Tạo tài khoản</button>
-                            </div>
-                        </form>
+            <div class="modal-content">
+                <div class="closeModal">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-4">
+                    <ul class="nav nav-tabs justify-content-center" id="loginTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="home" aria-selected="true">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="profile" aria-selected="false">Tạo tài khoản</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="loginTabContent">
+                        <div class="tab-pane fade show active p-3" id="signin" role="tabpanel" aria-labelledby="signin-tab">
+                            <form id="fDangNhap">
+                                <div class="form-group mt-2">
+                                    <input type="email" class="form-control input" id="EmailLogin" aria-describedby="emailHelp">
+                                    <label for="EmailLogin" data-placeholder="Email"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="password" class="form-control input" id="PasswordLogin">
+                                    <label for="PasswordLogin" data-placeholder="Mật khẩu"></label>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-center">
+                                    <button type="button" id="btnDangNhap" class="btn btn-pri">Đăng nhập</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade p-3" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                            <form id="fDangKy">
+                                <div class="form-group mt-2">
+                                    <input type="text" class="form-control input" id="Fullname" aria-describedby="fullnameHelp">
+                                    <label for="Fullname" data-placeholder="Họ tên"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="text" class="form-control input" id="Phonen" aria-describedby="phoneHelp">
+                                    <label for="Phone" data-placeholder="Số diện thoại"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="email" class="form-control input" id="EmailRegister" aria-describedby="emailHelp">
+                                    <label for="EmailRegister" data-placeholder="Email"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="password" class="form-control input" id="PasswordRegister1">
+                                    <label for="PassworRegister1" data-placeholder="Mật khẩu"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="password" class="form-control input" id="PasswordRegister2">
+                                    <label for="PassworRegister2" data-placeholder="Nhập lại mật khẩu"></label>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-center">
+                                    <button type="button" id="btnTaoTaiKhoan" class="btn btn-pri">Tạo tài khoản</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
     <!-- End login modal -->
@@ -335,7 +336,8 @@
     <script src="assets/libs/popper/popper.min.js"></script>
     <script src="assets/libs/boostrap/js/bootstrap.js"></script>
     <script src="assets/js/main.js"></script>
-
+    <script src="assets/js/js.js"></script>
+    
     <!-- End every page -->
 </body>
 </html>
