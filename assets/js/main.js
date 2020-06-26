@@ -2,7 +2,9 @@ $(document).ready(function () {
     'use strict';
     var c, currentScrollTop = 0,
         navbar = $('nav').not('.products-nav');
-  
+    if ($(window).scrollTop() > 200) {
+        navbar.addClass('scrollDown');
+    }
     $(window).scroll(function () {
         var a = $(window).scrollTop();
         var b = navbar.height();
@@ -39,18 +41,6 @@ $(document).ready(function () {
             navbar.addClass('scrollDown');
         }
     })
-
-    // var nav_h = navbar.outerHeight();
-    // $('.blog-nav').next('div').css({
-    //   'margin-top': nav_h
-    // })
-    // $('.section-banner').css({
-    //   'padding-top': nav_h + 25
-    // })
-    // $('.sticky-top').css({
-    //   top: nav_h + 15
-    // })
-
     
     $(".input").each(function(){
         if ($(this).val().trim() != "") {
@@ -88,7 +78,6 @@ $(document).ready(function () {
         else if (this.value == 'G') {
             $(".product-price").hide();
             $(".product-price[data-size=G]").show();
-            
         }
     });
 
@@ -105,12 +94,12 @@ $(document).ready(function () {
         if (amount < 1)
             amount = 1;
         $('input[name=amount]').val(amount);
-            
     })
 
     $(document).on('click', '#toppings .dropdown-menu', function (e) {
         e.stopPropagation();
     });
+    $("input[data-type=topping]").prop("checked", false);
     $('input[data-type=topping]').change(function(){
         var div = $("<div>")
         var num = $('#plus').attr("data-plus");
@@ -131,9 +120,36 @@ $(document).ready(function () {
             $("div[data-name='"+name+"']").remove();
         }
     })
+<<<<<<< HEAD
     $("#add-product").on("click", function(){
       
+=======
+    $(document).click(function(){
+        $('.shopping-desc').hide();
     })
+    $("#add-product").on("click", function(e){
+        e.stopPropagation();
+        var selectAmount = parseInt($('input[name=amount]').val());
+        var currentAmount = parseInt($("#amount").attr("data-soluong"));
+        var total = selectAmount + currentAmount;
+        $("#amount").attr("data-soluong", total).text(total);
+        
+        navbar.removeClass('scrollUp').addClass('scrollDown');
+        $('.shopping-desc').show();
+        $('.shopping-desc > p').hide();
+        $('.shopping-desc div').show();
+>>>>>>> 56c91de78c502abd61b894de939fa6e4685a7e8d
+    })
+
+    
+    $("a[href='#']").click(function() {
+        navbar.removeClass('scrollUp');
+        navbar.find("button").addClass('btn-border');
+        $(".topbtn").css({
+            'visibility' : 'hidden',
+            'opacity': 0
+        });
+    });
 });
 
 function PriceFormat(price, currency){

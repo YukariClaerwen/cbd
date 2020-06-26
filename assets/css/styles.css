@@ -185,7 +185,7 @@ a.header-cart {
     z-index: 1000;
     display: none;
     float: left;
-    min-width: 10rem;
+    min-width: 15rem;
     padding: .5rem 0;
     margin: .125rem 0 0;
     font-size: 1rem;
@@ -202,12 +202,13 @@ a.header-cart {
     border: none;
     border-top: 3px solid #ffc30d;
     line-height: normal;
+    box-shadow: 1px 1px 5px silver;
 }
 .shopping-desc p {
     text-transform: none;
 }
 .shopping-cart:hover .shopping-desc {
-    display: block;
+    display: block!important;
 }
 .my-nav.scrollUp{
     transform: translateY(-100px);
@@ -443,12 +444,19 @@ table#tCTGH tfoot tr:last-child{
     outline: 0;
     box-shadow: none;
 }
+.form-control:disabled, .form-control[readonly] {
+    background-color: transparent;
+    opacity: 1;
+}
 .input {
     color: #555555;
     display: block;
     width: 100%;
     background: transparent;
     padding: 0;
+}
+#fContact .input {
+    color: white;
 }
 .input + label {
     position: absolute;
@@ -476,10 +484,22 @@ table#tCTGH tfoot tr:last-child{
     margin-bottom: 0.5rem;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    -ms-transition: all 0.4s;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -o-transform: translateY(-50%);
+    -ms-transition: all 0.4s;
+}
+.input.textarea + label:after {
+    top: 0;
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
+#fContact .input + label:after {
+    color: #aaa;
 }
 .input + label:before {
     content: "";
@@ -501,8 +521,12 @@ table#tCTGH tfoot tr:last-child{
     font-size: 12px;
     font-weight: bold;
 }
+.input.textarea:focus + label:after,
+.input.textarea.has-val + label::after {
+    top: -15px;
+}
 .input:focus + label:after {
-    color: #ffc30d;
+    color: #ffc30d!important;
 }
 .input:focus + label:before{
     width: 100%;
