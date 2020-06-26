@@ -229,3 +229,35 @@ $("#btnLuuThongTin").click(function() {
 			$("#btnLuuThongTin").hide();
 	}		
 })
+/* --------------------------------------------------XÓA----------------------------------------------------------------- */
+var len1=$("#tCTGH").find("tbody tr").length;
+$("button[btn-name=xoa]").click(function () {
+	$(this).closest("tr").remove();
+	len1--;
+
+	if(len1 <1){
+		$("#thongbao").modal('show');
+	}
+})
+/* --------------------------------------------------THÔNG TIN GIAO HÀNG----------------------------------------------------------------- */
+$("#btnLuu-GH").click(function () {
+	var len=$("#fTTGH").find("input").length;
+	var err="";
+	var found=false;
+	for (var i = 0; i < len; i++) {
+		if($("#fTTGH input").eq(i).val().replace(/^\s+|\s+$/g, "")==0){
+				found=true;
+				break;
+			}
+		}
+	if(found==true)
+		err="Vui lòng nhập đầy đủ thông tin";
+	else{
+		if(checkphone($("#Phonen-GH").val()) ==false || $("#Phonen-GH").val().length!=10 )
+			err+="Số điện thoại sai/ chưa đủ số.\n"
+	}
+	if(err!="")
+		alert(err);
+	else
+		alert("Đơn hàng đã được gửi về hệ thống.\n Vui lòng giữ điện thoại để xác nhận");
+})

@@ -73,6 +73,26 @@
 				</tr>
 			</thead>
 			<tbody>
+				<tr data-index>
+					<td>
+						<img src="assets/images/drink3.jpg" width="100px" height="100px">
+					</td>
+					<td>
+						Cappucino
+					</td>
+					<td>
+						31.000 <span>VNĐ</span>
+					</td>
+					<td>
+						5
+					</td>
+					<td>
+						155.000 <span>VNĐ</span>
+					</td>
+					<td>
+						<button type="button" btn-name="xoa" class="btn btn-pri btnXoa">Xóa</button>
+					</td>
+				</tr>
 				<tr>
 					<td>
 						<img src="assets/images/drink3.jpg" width="100px" height="100px">
@@ -88,6 +108,9 @@
 					</td>
 					<td>
 						155.000 <span>VNĐ</span>
+					</td>
+					<td>
+						<button type="button" btn-name="xoa" class="btn btn-pri btnXoa">Xóa</button>
 					</td>
 				</tr>
 			</tbody>
@@ -116,12 +139,72 @@
 							<button type="button" class="btn btn-warning"><a href="menu.html">Tiếp tục mua hàng</a></button>
 						</div>
 						<div>
-							<button type="button" class="btn btn-warning"><a href="">Đặt hàng</a></button>
+							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalTTGH">Đặt hàng</button>
 						</div>	
 					</td>
 				</tr>
 			</tfoot>
 		</table>
-	</div>    
+		<div class="modal fade" id="ModalTTGH" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		    <div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content">
+			        <div class="modal-header">
+			        	<h5 class="modal-title">Thông tin giao hàng</h5>
+			        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          		<span aria-hidden="true">&times;</span>
+			        	</button>
+			      	</div>
+			        <div class="modal-body">
+			        	<form id="fTTGH">
+                            <div class="form-group mt-2">
+                                <input type="text" class="form-control input" id="Fullname-GH" aria-describedby="fullnameHelp">
+                                <label for="Fullname-GH" data-placeholder="Họ tên"></label>
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="text" class="form-control input" id="Phonen-GH" aria-describedby="phoneHelp">
+                                <label for="Phonen-GH" data-placeholder="Số diện thoại"></label>
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="text" class="form-control input" id="Address-GH" aria-describedby="emailHelp">
+                                <label for="Address-GH" data-placeholder="Địa chỉ giao hàng"></label>
+                            </div>                                
+                            <div class="mt-4 d-flex justify-content-center">
+                                <button type="button" id="btnLuu-GH" class="btn btn-pri">Lưu</button>
+                            </div>
+                        </form> 
+			        </div>
+			    </div>
+		  </div>
+		</div>
+
+		<div id="thongbao" class="modal" tabindex="-1" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Thông báo</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <p id="Thongbao">Giỏ hàng trống</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="assets/libs/popper/popper.min.js"></script>
+    <script src="assets/libs/boostrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/js.js"></script>
+
+    <!-- End every page -->    
 </body>
 </html>
