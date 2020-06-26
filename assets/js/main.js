@@ -132,7 +132,7 @@ $(document).ready(function () {
         }
     })
     $("#add-product").on("click", function(){
-        
+      
     })
 });
 
