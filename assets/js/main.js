@@ -120,10 +120,6 @@ $(document).ready(function () {
             $("div[data-name='"+name+"']").remove();
         }
     })
-<<<<<<< HEAD
-    $("#add-product").on("click", function(){
-      
-=======
     $(document).click(function(){
         $('.shopping-desc').hide();
     })
@@ -138,7 +134,6 @@ $(document).ready(function () {
         $('.shopping-desc').show();
         $('.shopping-desc > p').hide();
         $('.shopping-desc div').show();
->>>>>>> 56c91de78c502abd61b894de939fa6e4685a7e8d
     })
 
     
