@@ -13,10 +13,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Start -->
+    <!-- Main navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top my-nav justify-content-between">
+        <a class="navbar-brand" href="index.html">
+            <img class="nav-logo nav-logo-white" src="assets/images/logo_white_203x300.png" alt="">
+            <img class="nav-logo nav-logo-color" src="assets/images/logo_yellow_203x300.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto px-3">
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="menu.html">Đặt hàng</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="news.html">Tin tức</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="tuyendung.html">Tuyển dụng</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                </li>
+            </ul>
+            <div class="shopping-cart px-3">
+                <a class="header-cart" href="chitietgiohang.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-amount" id="amount" data-soluong="0">0</span>
+                </a>
+                <div class="shopping-desc px-3 pt-3 text-muted">
+                    <p>Không có sản phẩm trong giỏ hàng.</p>
+                    <div style="display:none;">
+                        <p>Đã thêm sản phẩm vào giỏ hàng</p>
+                        <a class="btn btn-pri btn-sm" href="chitietgiohang.html">
+                            Xem giỏ hàng và thanh toán
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="px-3">
+                <button id="login" type="button" class="btn btn-pri btn-border"  data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
+                <div id="taikhoan" style="display: none;"><a href="profile.html" id="demo" class="text-white "><i class="far fa-user"></i></a></div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Main navbar -->
+
 	<div class="container-fluid bg-contact">
 		<div class="col-xs-12 col-sm-8 offset-sm-4 col-md-7 offset-md-5 col-lg-6 offset-lg-6 col-xl-4 offset-xl-8">
 			<div style="height: 25vh"></div>
-			<h1 class="display-1 font-weight-bold">CONTACT</h1>
+			<h1 class="display-1 font-weight-bold text-uppercase">Liên hệ</h1>
 			<form id="fContact">
 				<div class="form-group mt-2">
                     <input type="email" class="form-control input" id="EmailContact" aria-describedby="emailHelp">
@@ -30,8 +85,9 @@
                     <input type="text" class="form-control input" id="SDTContact">
                     <label for="SDTContact" data-placeholder="Số điện thoại"></label>
                 </div>
-                <div class="form-group">
-                	<textarea name="tara-gop-y" placeholder="Nội dung góp ý" rows="5"></textarea>
+                <div class="form-group mt-4">
+                    <textarea class="input textarea" id="noidung" name="tara-gop-y" rows="5"></textarea>
+                    <label for="noidung" data-placeholder="Nội dung góp ý"></label>
                 </div>
                 <div class="mt-4 d-flex justify-content-center">
                     <button type="button" class="btn btn-pri" id="btnSend">Gửi</button>
@@ -41,13 +97,82 @@
 	</div>
 </body>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
-<script src="assets/libs/popper/popper.min.js"></script>
-<script src="assets/libs/boostrap/js/bootstrap.min.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/js.js"></script>
+    
+    <!-- Login modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="closeModal">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-4">
+                    <ul class="nav nav-tabs justify-content-center" id="loginTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="home" aria-selected="true">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="profile" aria-selected="false">Tạo tài khoản</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="loginTabContent">
+                        <div class="tab-pane fade show active p-3" id="signin" role="tabpanel" aria-labelledby="signin-tab">
+                            <form id="fDangNhap">
+                                <div class="form-group mt-2">
+                                    <input type="email" class="form-control input" id="EmailLogin" aria-describedby="emailHelp">
+                                    <label for="EmailLogin" data-placeholder="Email"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="password" class="form-control input" id="PasswordLogin">
+                                    <label for="PasswordLogin" data-placeholder="Mật khẩu"></label>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-center">
+                                    <button type="button" id="btnDangNhap" class="btn btn-pri">Đăng nhập</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade p-3" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                            <form id="fDangKy">
+                                <div class="form-group mt-2">
+                                    <input type="text" class="form-control input" id="Fullname" aria-describedby="fullnameHelp">
+                                    <label for="Fullname" data-placeholder="Họ tên"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="text" class="form-control input" id="Phonen" aria-describedby="phoneHelp">
+                                    <label for="Phone" data-placeholder="Số diện thoại"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="email" class="form-control input" id="EmailRegister" aria-describedby="emailHelp">
+                                    <label for="EmailRegister" data-placeholder="Email"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="password" class="form-control input" id="PasswordRegister1">
+                                    <label for="PassworRegister1" data-placeholder="Mật khẩu"></label>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <input type="password" class="form-control input" id="PasswordRegister2">
+                                    <label for="PassworRegister2" data-placeholder="Nhập lại mật khẩu"></label>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-center">
+                                    <button type="button" id="btnTaoTaiKhoan" class="btn btn-pri">Tạo tài khoản</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End login modal -->
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="assets/libs/popper/popper.min.js"></script>
+    <script src="assets/libs/boostrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/js.js"></script>
 
-<!-- End every page -->
+    <!-- End every page -->
 </html>
