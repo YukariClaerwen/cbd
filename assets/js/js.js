@@ -75,7 +75,7 @@ $("#btnTaoTaiKhoan").click(function(){
 		for (var i = 0; i < listusers.length; i++) {
 			if($("#EmailLogin").val()==listusers[i].email && $("#PasswordLogin").val()==listusers[i].matkhau){
 				found=true;
-				// $("#demo").text(listusers[i].hoten);
+				$("#demo").text(listusers[i].hoten);
 				break;
 			}
 		}
@@ -84,13 +84,9 @@ $("#btnTaoTaiKhoan").click(function(){
 		else{
 			$("#loginModal").modal("hide");
 			$("#taikhoan").show();
-			$(".nav-login").hide();
+			$("#login").hide();
 			alert("Bạn đã đăng nhập thành công");
 		}
-	})
-	$("#btnDangXuat").click(function(){
-		$(".nav-login").show();
-		$("#taikhoan").hide();
 	})
 
 /* --------------------------------------------------GƯI GÓP Ý----------------------------------------------------------------- */	
@@ -238,13 +234,24 @@ var len1=$("#tCTGH").find("tbody tr").length;
 $("button[btn-name=xoa]").click(function () {
 	$(this).closest("tr").remove();
 	len1--;
-
+	TotalPrice();
 	if(len1 <1){
-		$("#thongbao").modal('show');
+		$("#tCTGH").hide();
+		$("#Giohangtrong").removeClass("d-none");
 	}
 })
-/* --------------------------------------------------THÔNG TIN GIAO HÀNG----------------------------------------------------------------- */
-$("#btnLuu-GH").click(function () {
+/* --------------------------------------------------TIẾN HÀNH ĐẶT HÀNG----------------------------------------------------------------- */
+$("#btnTienHanhDatHang").click(function () {
+	if(parseFloat($("#f-total-price").attr("data-price"))<100000)
+		$("#thongbao").modal('show');	
+	else
+		$("#btnTienHanhDatHang").find('a').attr("href","dathang.html");
+})
+
+
+
+/* --------------------------------------------------ĐẶT HÀNG----------------------------------------------------------------- */
+$("#btnDatHang").click(function () {
 	var len=$("#fTTGH").find("input").length;
 	var err="";
 	var found=false;
@@ -265,3 +272,25 @@ $("#btnLuu-GH").click(function () {
 	else
 		alert("Đơn hàng đã được gửi về hệ thống.\n Vui lòng giữ điện thoại để xác nhận");
 })
+/*----------Tổng tiền----------*/
+$(document).ready(function(){
+	TotalPrice();
+})
+function TotalPrice() {
+	var total=0;
+	var myrow=$("#tCTGH").find("tbody tr");
+	for (var i = 0; i < len1; i++) {
+		//console.log(parseFloat($(myrow[i]).find('td[total-price=total]').find('.product-price').attr("data-price")));
+		total+= parseFloat($(myrow[i]).find('td[total-price=total]').find('.product-price').attr("data-price"));
+	}
+	$("#f-total-price").html(PriceFormat(total,"VNĐ"));
+	$("#f-total-price").attr("data-price",total);
+	var Ftotal=parseFloat($("#f-total-price").attr("data-price"));
+	console.log(Ftotal);
+	var promotion= parseFloat($("#promotion").attr("data-promotion"));
+	console.log(promotion);
+	var Ltotal=Ftotal- Ftotal*promotion;
+	console.log(Ltotal);
+	$("#l-total-price").html(PriceFormat(Ltotal,"VNĐ"));
+	$("#l-total-price").attr("data-price",Ltotal);
+}

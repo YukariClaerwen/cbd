@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chi Tiết Giỏ Hàng</title>
+	<title>Tiến hành đặt hàng</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Caztus Blended</title>
 
     <link rel="stylesheet" href="assets/libs//boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/libs/fontawesome/css/all.css">
@@ -15,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Start -->
+	<!-- Start -->
     <!-- Main navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top my-nav justify-content-between">
         <a class="navbar-brand" href="index.html">
@@ -98,125 +97,102 @@
     	</div>
     </div>
 	<!-- End head background -->
-
-	<div class="container my-5">
-		<table id="tCTGH" class="mx-auto">
-			<thead>
-				<tr>
-					<th>&nbsp;</th>
-					<th>&nbsp;</th>
-					<th>Giá</th>
-					<th>Số lượng</th>
-					<th>Thành tiền</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr data-index>
-					<td>
-						<img src="assets/images/drinks/002.jpg" width="100px" height="100px">
-					</td>
-					<td>
-						Cappucino
-					</td>
-					<td>
-						<span class="product-price">39000</span>
-					</td>
-					<td>
-						1
-					</td>
-					<td total-price="total" total-price="total">
-						<span class="product-price" data-price="39000">39000</span>
-					</td>
-					<td>
-						<button type="button" btn-name="xoa" class="btn btn-pri btnXoa">Xóa</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<img src="assets/images/drinks/001.jpg" width="100px" height="100px">
-					</td>
-					<td>
-						Mr.Oreo
-					</td>
-					<td>
-						<span class="product-price" data-price="39000">39000</span>
-					</td>
-					<td>
-						5
-					</td>
-					<td class="text-right" total-price="total">
-						<span class="product-price" data-price="195000">195000</span>
-					</td>
-					<td>
-						<button type="button" btn-name="xoa" class="btn btn-pri btnXoa">Xóa</button>
-					</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="3">&nbsp;</td>
-					<td colspan="1">Tổng cộng</td>
-					<td colspan="1" class="text-right"><span class="product-price" id="f-total-price" data-price="0" ></span></td>
-					<td colspan="1">&nbsp;</td>
-				</tr>
-				<tr>
-					<td colspan="3">&nbsp;</td>
-					<td colspan="1">Giảm giá</td>
-					<td colspan="1" class="text-right"><span  id="promotion" data-promotion=0.15>15%</span></td>
-					<td colspan="1">&nbsp;</td>
-				</tr>
-				<tr>
-					<td colspan="3">&nbsp;</td>
-					<td colspan="1" >Tổng tiền thanh toán</td>
-					<td colspan="1" class="text-right"><span class="product-price" id="l-total-price" data-price="0"></span></td>
-					<td colspan="1">&nbsp;</td>
-				</tr>
-				<tr>
-					<td colspan="3">
-						<textarea name="note" placeholder="Ghi chú"></textarea>
-					</td>
-					<td colspan="3">
-						<div class="mb-3">
-							<button type="button" class="btn btn-warning"><a href="menu.html">Tiếp tục mua hàng</a></button>
-						</div>
-						<div>
-							<button type="button" class="btn btn-warning" id="btnTienHanhDatHang"><a> Tiến hành đặt hàng</a></button>
-						</div>	
-					</td>
-				</tr>
-			</tfoot>
-		</table>
-		<!-- Giỏ hàng trống -->
-		<div class="mx-auto d-none" align="center" id="Giohangtrong">
-			<img src="assets/images/Giohangtrong.png" class="img-fluid">
-			<p class="pt-5">Không có sản phẩm nào trong giỏ hàng của bạn</p>
-			<button type="button" class="btn btn-warning"><a href="menu.html">Tiếp tục mua hàng</a></button>
-		</div>
-
-		<div id="thongbao" class="modal" tabindex="-1" role="dialog">
-		  <div class="modal-dialog modal-dialog-centered">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title">Thông báo</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		        <p id="Thongbao">Chưa đủ điều kiện giao hàng</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</div>			   
-	
-
-    <!-- End -->
-
+    
+    <div class="container-fluid">
+    	<div class="row row-cols-2">
+    		<!-- Bảng giỏ hàng -->
+    		<div class="col ">
+				<table id="tCTGH" class="mx-auto">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-index>
+                            <td>
+                                <img src="assets/images/drinks/002.jpg" width="100px" height="100px">
+                            </td>
+                            <td>
+                                Cappucino
+                            </td>
+                            <td>
+                                <span class="product-price">39000</span>
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td total-price="total" total-price="total">
+                                <span class="product-price" data-price="39000">39000</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="assets/images/drinks/001.jpg" width="100px" height="100px">
+                            </td>
+                            <td>
+                                Mr.Oreo
+                            </td>
+                            <td>
+                                <span class="product-price" data-price="39000">39000</span>
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td class="text-right" total-price="total">
+                                <span class="product-price" data-price="195000">195000</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">&nbsp;</td>
+                            <td colspan="1">Tổng cộng</td>
+                            <td colspan="1" class="text-right"><span class="product-price" id="f-total-price" data-price="0" ></span></td>
+                            <td colspan="1">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">&nbsp;</td>
+                            <td colspan="1">Giảm giá</td>
+                            <td colspan="1" class="text-right"><span  id="promotion" data-promotion=0.15>15%</span></td>
+                            <td colspan="1">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">&nbsp;</td>
+                            <td colspan="1" >Tổng tiền thanh toán</td>
+                            <td colspan="1" class="text-right"><span class="product-price" id="l-total-price" data-price="0"></span></td>
+                            <td colspan="1">&nbsp;</td>
+                        </tr>
+                    </tfoot>
+                </table>	    			
+    		</div>
+    		<!-- Form đặt hàng -->
+    		<div class="col bg-secondary">
+    			<h1 class="display-2 text-white">Thông tin giao hàng</h1>
+				<form id="fTTGH">
+	                <div class="form-group mt-2">
+	                    <input type="text" class="form-control input" id="Fullname-GH" aria-describedby="fullnameHelp">
+	                    <label for="Fullname-GH" data-placeholder="Họ tên"></label>
+	                </div>
+	                <div class="form-group mt-4">
+	                    <input type="text" class="form-control input" id="Phonen-GH" aria-describedby="phoneHelp">
+	                    <label for="Phonen-GH" data-placeholder="Số diện thoại"></label>
+	                </div>
+	                <div class="form-group mt-4">
+	                    <input type="text" class="form-control input" id="Address-GH" aria-describedby="emailHelp">
+	                    <label for="Address-GH" data-placeholder="Địa chỉ giao hàng"></label>
+	                </div>                                
+	                <div class="mt-4 d-flex justify-content-center">
+	                    <button type="button" id="btnDatHang" class="btn btn-pri">Đặt hàng</button>
+	                </div>
+	            </form> 						    			
+    		</div>
+    	</div>
+    </div>
     <!-- Start every page -->
     <div class="footer bg-dark text-white px-5">
         <div class="container-fluid p-5">
@@ -248,7 +224,6 @@
             &copy; 2020 Caztus Ice Blended.
         </div>
     </div>
-    
     <!-- Login modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
