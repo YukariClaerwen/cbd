@@ -75,7 +75,7 @@ $("#btnTaoTaiKhoan").click(function(){
 		for (var i = 0; i < listusers.length; i++) {
 			if($("#EmailLogin").val()==listusers[i].email && $("#PasswordLogin").val()==listusers[i].matkhau){
 				found=true;
-				$("#demo").text(listusers[i].hoten);
+				// $("#demo").text(listusers[i].hoten);
 				break;
 			}
 		}
@@ -84,9 +84,13 @@ $("#btnTaoTaiKhoan").click(function(){
 		else{
 			$("#loginModal").modal("hide");
 			$("#taikhoan").show();
-			$("#login").hide();
+			$(".nav-login").hide();
 			alert("Bạn đã đăng nhập thành công");
 		}
+	})
+	$("#btnDangXuat").click(function(){
+		$(".nav-login").show();
+		$("#taikhoan").hide();
 	})
 
 /* --------------------------------------------------GƯI GÓP Ý----------------------------------------------------------------- */	

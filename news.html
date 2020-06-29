@@ -48,7 +48,7 @@
                 </li>
             </ul>
             <div class="shopping-cart px-3">
-                <a class="header-cart" href="chitietgiohang.html">
+                <a class="header-cart navb-link" href="chitietgiohang.html">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-amount" id="amount" data-soluong="0">0</span>
                 </a>
@@ -62,9 +62,18 @@
                     </div>
                 </div>
             </div>
-            <div class="px-3">
-                <button id="login" type="button" class="btn btn-pri btn-border"  data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
-                <div id="taikhoan" style="display: none;"><a href="profile.html" id="demo" class="text-white "><i class="far fa-user"></i></a></div>
+            <div class="px-3 nav-login">
+                <button id="login" type="button" class="btn btn-pri btn-border" data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
+            </div>
+            <div class="px-3 navb-drop" id="taikhoan" style="display: none;">
+                <a href="profile.html" id="demo" class="navb-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <div class="px-3 pt-3 text-muted navb-dropContents">
+                    <a id="btnDangXuat" class="btn btn-pri btn-sm w-100" href="#">
+                        Đăng xuất
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
