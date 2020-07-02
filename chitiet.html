@@ -33,7 +33,7 @@
                     <a class="nav-link" href="index.html#about">Về chúng tôi</a>
                 </li>
                 <li class="nav-item px-3 active">
-                    <a class="nav-link" href="#">Đặt hàng <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="menu.html">Đặt hàng <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item px-3">
                     <a class="nav-link" href="news.html">Tin tức</a>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-3 nav-login">
+            <div id="loginDiv" class="px-3 nav-login">
                 <button id="login" type="button" class="btn btn-pri btn-border" data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
             </div>
             <div class="px-3 navb-drop" id="taikhoan" style="display: none;">
@@ -130,14 +130,14 @@
 	   	<div class="row row-cols-2 py-5">
 	        <!--Hình -->   		
 	   		<div class="col-lg-7 col-md-7 col-sm-7 col-12 ">
-	   			<img src="assets/images/drinks/001.jpg" class="img-fluid" >
+	   			<img src="assets/images/drinks/001.jpg" class="img-fluid img-sp" >
 	   		</div>
 	        <!-- Thông tin chi tiết -->	   		
 	   		<div class="col-lg-5 col-md-5 col-sm-5 col-12 pt-0">
 	   			<div class="product-name mb-3">Mr.Oreo</div>
 	   			<div class="prices">
-                    <div class="product-price" data-size="S">31000</div>
-                    <div class="product-price" data-size="G" style="display: none">55000</div>
+                    <div class="p-price" data-size="S">31000</div>
+                    <div class="p-price" data-size="G" style="display: none">55000</div>
                 </div>
 	   			<div id="plus" class="product-plus" data-plus="0">+0 VND</div>
 	            <!-- Form -->   			
@@ -178,43 +178,43 @@
                                 <ul class="m-0 p-0">
                                     <li class="custom-control custom-checkbox">
                                         <div class="px-3">
-                                            <input type="checkbox" class="custom-control-input" id="topping1" data-type="topping" data-name="Chip Chocolate" data-price="7000">
+                                            <input type="checkbox" class="custom-control-input" id="topping1" data-type="topping" data-id="topping1" data-name="Chip Chocolate" data-price="7000">
                                             <label class="custom-control-label w-100" for="topping1">Chip Chocolate</label>
                                         </div>
                                     </li>
                                     <li class="custom-control custom-checkbox">
                                         <div class="px-3">
-                                            <input type="checkbox" class="custom-control-input" id="topping2" data-type="topping" data-name="Chip mintchoco" data-price="7000">
+                                            <input type="checkbox" class="custom-control-input" id="topping2" data-type="topping" data-id="topping2" data-name="Chip mintchoco" data-price="7000">
                                             <label class="custom-control-label w-100" for="topping2">Chip mintchoco</label>
                                         </div>
                                     </li>
                                     <li class="custom-control custom-checkbox">
                                         <div class="px-3">
-                                            <input type="checkbox" class="custom-control-input" id="topping3" data-type="topping" data-name="Kem vanilla" data-price="9000">
+                                            <input type="checkbox" class="custom-control-input" id="topping3" data-type="topping" data-id="topping3" data-name="Kem vanilla" data-price="9000">
                                             <label class="custom-control-label w-100" for="topping3">Kem vanilla</label>
                                         </div>
                                     </li>
                                     <li class="custom-control custom-checkbox">
                                         <div class="px-3">
-                                            <input type="checkbox" class="custom-control-input" id="topping4" data-type="topping" data-name="Kem trà xanh" data-price="9000">
+                                            <input type="checkbox" class="custom-control-input" id="topping4" data-type="topping" data-id="topping4" data-name="Kem trà xanh" data-price="9000">
                                             <label class="custom-control-label w-100" for="topping4">Kem trà xanh</label>
                                         </div>
                                     </li>
                                     <li class="custom-control custom-checkbox">
                                         <div class="px-3">
-                                            <input type="checkbox" class="custom-control-input" id="topping5" data-type="topping" data-name="Kem chocolate" data-price="9000">
+                                            <input type="checkbox" class="custom-control-input" id="topping5" data-type="topping" data-id="topping5" data-name="Kem chocolate" data-price="9000">
                                             <label class="custom-control-label w-100" for="topping5">Kem chocolate</label>
                                         </div>
                                     </li>
                                     <li class="custom-control custom-checkbox">
                                         <div class="px-3">
-                                            <input type="checkbox" class="custom-control-input" id="topping6" data-type="topping" data-name="Trân châu trắng" data-price="10000">
+                                            <input type="checkbox" class="custom-control-input" id="topping6" data-type="topping" data-id="topping6" data-name="Trân châu trắng" data-price="10000">
                                             <label class="custom-control-label w-100" for="topping6">Trân châu trắng</label>
                                         </div>
                                     </li>
                                     <li class="custom-control custom-checkbox">
                                         <div class="px-3">
-                                            <input type="checkbox" class="custom-control-input" id="topping7" data-type="topping" data-name="Matcha Jelly" data-price="7000">
+                                            <input type="checkbox" class="custom-control-input" id="topping7" data-type="topping" data-id="topping7" data-name="Matcha Jelly" data-price="7000">
                                             <label class="custom-control-label w-100" for="topping7">Matcha Jelly</label>
                                         </div>
                                     </li>
@@ -350,9 +350,98 @@
     <script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="assets/libs/popper/popper.min.js"></script>
     <script src="assets/libs/boostrap/js/bootstrap.js"></script>
+    <script src="assets/js/localStorage.js"></script>
+    <script src="assets/js/objs.js"></script>
+    <script src="assets/js/Lists.js"></script>
+    <script src="assets/js/action.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/js.js"></script>
     
     <!-- End every page -->
+
+    <script>
+        // console.log(getObj("sp"));
+        var sp = getObj("SanPham");
+        console.log(sp);
+        $(".img-sp").attr("src","assets/images/drinks/"+sp.img+".jpg");
+        $(".product-name").text(sp.ten);
+        $(".p-price[data-size=S]").html(PriceFormat(sp.giaS, " VND"));
+        $("input#sizeS").attr("data-price",sp.giaS);
+        if(sp.giaG == 0){
+            $('label[for=sizeG]').hide();
+        } else {
+            $(".p-price[data-size=G]").html(PriceFormat(sp.giaG, " VND"));
+            $("input#sizeG").attr("data-price",sp.giaG);
+        }
+        
+        var gia = $('input#sizeS').attr("data-price");
+        //size
+        $('input[type=radio][name=sizename]').change(function() {
+            if (this.value == 'S') {
+                $(".p-price").hide();
+                $(".p-price[data-size=S]").show();
+            }
+            else if (this.value == 'G') {
+                $(".p-price").hide();
+                $(".p-price[data-size=G]").show();
+            }
+            gia = $(this).attr("data-price");
+        });
+
+        $(document).on('click', '#toppings .dropdown-menu', function (e) {
+            e.stopPropagation();
+        });
+        
+        var listTopping = new SanPhamList();
+        $("input[data-type=topping]").prop("checked", false);
+        $('input[data-type=topping]').change(function(){
+            var div = $("<div>")
+            var num = $('#plus').attr("data-plus");
+            var name = $(this).attr("data-name");
+            var price = $(this).attr("data-price");
+            var index = listSP.SearchSPById($(this).attr("data-id"));
+            
+            var plus = "<span class='text-success'>+ " + PriceFormat(price, " VND") + "</span> " + name;
+            if ($(this).is(':checked')) {
+                if(num == 0){
+                    $("#plus").empty();
+                } 
+                num++
+                div.attr("data-name", name).html(plus);
+                $("#plus").attr("data-plus",num).append(div);
+                listTopping.AddSP(listSP.DS[index]);
+            } else {
+                num--
+                $("#plus").attr("data-plus",num);
+                $("div[data-name='"+name+"']").remove();
+                listTopping.DeleteSP($(this).attr("data-id"));
+            }
+        })
+        var  navbar = $('nav').not('.products-nav');
+        $("#add-product").on("click", function(e){
+            e.stopPropagation();
+            var gh = getDataFromLocal("localGioHang");
+            var selectAmount = parseInt($('input[name=amount]').val());
+            // var currentAmount = parseInt($("#amount").attr("data-soluong"));
+            var currentAmount = gh.length;
+            var total = selectAmount + currentAmount;
+            
+
+            // console.log(listTopping)
+
+            navbar.removeClass('scrollUp').addClass('scrollDown');
+            $('.shopping-desc').show();
+            $('.shopping-desc > p').hide();
+            $('.shopping-desc div').show().find("p").show();
+            
+            addGH(sp.ten,gia,sp.img,selectAmount,listTopping);
+            // deleteObj("localGioHang")
+            console.log(getDataFromLocal("localGioHang"));
+            $("#amount").attr("data-soluong", total).text(total);
+        })
+        // var gh = getDataFromLocal("localGioHang");
+        // console.log(gh[0].topping.DS.length);
+
+    </script>
 </body>
 </html>

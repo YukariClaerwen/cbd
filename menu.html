@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-3 nav-login">
+            <div id="loginDiv"  class="px-3 nav-login">
                 <button id="login" type="button" class="btn btn-pri btn-border" data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
             </div>
             <div class="px-3 navb-drop" id="taikhoan" style="display: none;">
@@ -68,6 +68,7 @@
                     <i class="fas fa-user"></i>
                 </a>
                 <div class="px-3 pt-3 text-muted navb-dropContents">
+					<p>Xin chào <span id="showTen"></span></p>
                     <a id="btnDangXuat" class="btn btn-pri btn-sm w-100" href="#">
                         Đăng xuất
                     </a>
@@ -146,7 +147,7 @@
 				</div>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-start">
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp1">
 							<img class="img-fluid" src="assets/images/drinks/001.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -156,7 +157,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp2">
 							<img class="img-fluid" src="assets/images/drinks/002.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -166,7 +167,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp3">
 							<img class="img-fluid" src="assets/images/drinks/003.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -176,7 +177,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp4">
 							<img class="img-fluid" src="assets/images/drinks/004.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -201,7 +202,7 @@
 				</div>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-start">
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp1">
 							<img class="img-fluid" src="assets/images/drinks/001.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -211,7 +212,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp2">
 							<img class="img-fluid" src="assets/images/drinks/002.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -221,7 +222,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp3">
 							<img class="img-fluid" src="assets/images/drinks/003.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -231,7 +232,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp4">
 							<img class="img-fluid" src="assets/images/drinks/004.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -256,7 +257,7 @@
 				</div>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-start">
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp1">
 							<img class="img-fluid" src="assets/images/drinks/001.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -266,7 +267,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp2">
 							<img class="img-fluid" src="assets/images/drinks/002.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -276,7 +277,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp3">
 							<img class="img-fluid" src="assets/images/drinks/003.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -286,7 +287,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp4">
 							<img class="img-fluid" src="assets/images/drinks/004.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -311,7 +312,7 @@
 				</div>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-start">
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp1">
 							<img class="img-fluid" src="assets/images/drinks/001.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -321,7 +322,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp2">
 							<img class="img-fluid" src="assets/images/drinks/002.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -331,7 +332,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp3">
 							<img class="img-fluid" src="assets/images/drinks/003.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -341,7 +342,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp4">
 							<img class="img-fluid" src="assets/images/drinks/004.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -366,7 +367,7 @@
 				</div>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-start">
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp1">
 							<img class="img-fluid" src="assets/images/drinks/001.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -376,7 +377,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp2">
 							<img class="img-fluid" src="assets/images/drinks/002.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -386,7 +387,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp3">
 							<img class="img-fluid" src="assets/images/drinks/003.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -396,7 +397,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp4">
 							<img class="img-fluid" src="assets/images/drinks/004.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -421,7 +422,7 @@
 				</div>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-start">
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp1">
 							<img class="img-fluid" src="assets/images/drinks/001.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -431,7 +432,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp2">
 							<img class="img-fluid" src="assets/images/drinks/002.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -441,7 +442,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp3">
 							<img class="img-fluid" src="assets/images/drinks/003.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -451,7 +452,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp4">
 							<img class="img-fluid" src="assets/images/drinks/004.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -476,7 +477,7 @@
 				</div>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-start">
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp1">
 							<img class="img-fluid" src="assets/images/drinks/001.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -486,7 +487,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp2">
 							<img class="img-fluid" src="assets/images/drinks/002.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -496,7 +497,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp3">
 							<img class="img-fluid" src="assets/images/drinks/003.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -506,7 +507,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp4">
 							<img class="img-fluid" src="assets/images/drinks/004.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -531,7 +532,7 @@
 				</div>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-start">
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp1">
 							<img class="img-fluid" src="assets/images/drinks/001.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -541,7 +542,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp2">
 							<img class="img-fluid" src="assets/images/drinks/002.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -551,7 +552,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp3">
 							<img class="img-fluid" src="assets/images/drinks/003.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -561,7 +562,7 @@
 						</div>
 					</div>
 					<div class="col product-block text-center">
-						<a href="chitiet.html">
+						<a class="chitiet" href="chitiet.html" data-id="sp4">
 							<img class="img-fluid" src="assets/images/drinks/004.jpg">
 						</a>
 						<div class="product-caption d-flex flex-column justify-content-center mt-3">
@@ -688,6 +689,10 @@
     <script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="assets/libs/popper/popper.min.js"></script>
     <script src="assets/libs/boostrap/js/bootstrap.js"></script>
+    <script src="assets/js/localStorage.js"></script>
+    <script src="assets/js/objs.js"></script>
+    <script src="assets/js/Lists.js"></script>
+    <script src="assets/js/action.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/js.js"></script>
 

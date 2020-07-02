@@ -50,7 +50,7 @@
             <div class="shopping-cart px-3">
                 <a class="header-cart navb-link" href="chitietgiohang.html">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-amount" id="amount" data-soluong="5">5</span>
+                    <span class="cart-amount" id="amount" data-soluong="6">6</span>
                 </a>
                 <div class="shopping-desc px-3 pt-3 text-muted" style="display: none!important">
                     <p>Không có sản phẩm trong giỏ hàng.</p>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-3 nav-login">
+            <div id="loginDiv" class="px-3 nav-login">
                 <button id="login" type="button" class="btn btn-pri btn-border" data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
             </div>
             <div class="px-3 navb-drop" id="taikhoan" style="display: none;">
@@ -117,7 +117,7 @@
 						<img src="assets/images/drinks/002.jpg" width="100px" height="100px">
 					</td>
 					<td>
-						Cappucino
+						Creme bruleez
 					</td>
 					<td>
 						<span class="product-price">39000</span>
@@ -174,7 +174,10 @@
 				</tr>
 				<tr>
 					<td colspan="3">
-						<textarea name="note" placeholder="Ghi chú"></textarea>
+                        <div class="form-group mt-4">
+                            <textarea class="input textarea" name="note"></textarea>
+                            <label for="" data-placeholder="Ghi chú"></label>
+                        </div>
 					</td>
 					<td colspan="3">
 						<div class="mb-3">
@@ -188,8 +191,8 @@
 			</tfoot>
 		</table>
 		<!-- Giỏ hàng trống -->
-		<div class="mx-auto d-none" align="center" id="Giohangtrong">
-			<img src="assets/images/Giohangtrong.png" class="img-fluid">
+		<div class="mx-auto d-none pt-3 pb-5 text-center" id="Giohangtrong">
+            <i class="fas fa-cart-arrow-down fa-10x text-secondary"></i>
 			<p class="pt-5">Không có sản phẩm nào trong giỏ hàng của bạn</p>
 			<button type="button" class="btn btn-warning"><a href="menu.html">Tiếp tục mua hàng</a></button>
 		</div>
@@ -322,6 +325,10 @@
     <script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="assets/libs/popper/popper.min.js"></script>
     <script src="assets/libs/boostrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/objs.js"></script>
+    <script src="assets/js/Lists.js"></script>
+    <script src="assets/js/localStorage.js"></script>
+    <script src="assets/js/action.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/js.js"></script>
 

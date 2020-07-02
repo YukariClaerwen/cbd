@@ -11,6 +11,9 @@
 .row{
 	margin:0 6%;
 }
+.card .row {
+	margin: 0;
+}
 .bg-#fecc4f{
 	background-color: #fecc4f;
 }
@@ -171,12 +174,12 @@ a{
 	background: transparent;
 }
 table#tTuyenDung tr,table#tLSDH tr{
-	border-bottom: 1px solid #ffc30d;
+	/* border-bottom: 1px solid #ffc30d; */
 	padding: 20px 10px;
 	font-size: 18px;
 }
 table#tTuyenDung tbody tr:hover, table#tLSDH tbody tr:hover{
-	background-color: #b3afa5;
+	/* background-color: #b3afa5; */
 }
 table#tTuyenDung tr td:nth-child(odd), table#tLSDH tr td:nth-child(odd) {
 	min-width: 250px;

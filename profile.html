@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-3 nav-login" style="display: none;">
+            <div id="loginDiv" class="px-3 nav-login" style="display: none;">
                 <button id="login" type="button" class="btn btn-pri btn-border" data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
             </div>
             <div class="px-3 navb-drop" id="taikhoan">
@@ -156,7 +156,7 @@
 	                </div>
 
 		            <div class="tab-pane fade  pt-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-	        			<table id="tLSDH" class="mx-auto">
+	        			<table id="tLSDH" class="mx-auto table table-striped">
 							<thead>
 								<tr>
 									<th>Mã đơn hàng</th>
@@ -322,9 +322,28 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="assets/libs/popper/popper.min.js"></script>
-    <script src="assets/libs/boostrap/js/bootstrap.min.js"></script>
+    <script src="assets/libs/boostrap/js/bootstrap.js"></script>
+    <script src="assets/js/localStorage.js"></script>
+    <script src="assets/js/objs.js"></script>
+    <script src="assets/js/Lists.js"></script>
+    <script src="assets/js/action.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/js.js"></script>
+
+    <script>
+        // var userlist = getDataFromLocal("localUserList");
+        // console.log(userlist)
+        $(document).ready(function(){
+            if(CheckExistLocal("user")) {
+                var user = getDataFromLocal("user");
+                $("#Fullname-Pr").val(user.hoten);
+                $("#Email-Pr").val(user.email);
+                $("#Phonen-Pr").val(user.SoDT);
+                $("#Discount").val(user.diem);
+                // console.log(user);
+            }   
+        })
+    </script>
 
     <!-- End every page -->
 </body>

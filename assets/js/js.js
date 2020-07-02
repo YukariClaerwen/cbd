@@ -1,5 +1,7 @@
 
 /* --------------------------------------------------ĐĂNG KÝ----------------------------------------------------------------- */	
+
+var listusers = getDataFromLocal("localUserList");
 $("#btnTaoTaiKhoan").click(function(){
 		var blank = false;
 		var err="";
@@ -28,8 +30,20 @@ $("#btnTaoTaiKhoan").click(function(){
 
 		if(err!="")
 			alert(err);
-		else
-			alert("Bạn đã đăng ký thành công");
+		else {
+			//Lây dữ liệu từ form
+			var password = $('#PasswordRegister1').val();
+			// password = md5(password);
+			var fullname = $('#Fullname').val();
+			var email = $('#EmailRegister').val();
+			var phone = $('#Phonen').val();
+			// console.log(password);
+			addUser(email,password,fullname,phone);
+			$("#loginModal").modal("hide");
+			alert("Bạn đã đăng ký thành công\nVui lòng đăng nhập.");
+			
+			location.reload();
+		}
 	});
 
 	function checkEmail(email) {
@@ -60,32 +74,48 @@ $("#btnTaoTaiKhoan").click(function(){
 			return true;			
 	}
 /* --------------------------------------------------ĐĂNG NHẬP----------------------------------------------------------------- */		
-	function User(Id,Email,Matkhau,Hoten){
-		this.id=Id;
-		this.email=Email;
-		this.matkhau=Matkhau;
-		this.hoten=Hoten;
-	}
-	var listusers=[new User("1","user1@gmail.com","123456","user1"),
-					new User("2","user2@gmail.com","456789","user2")
-				  ];
-
+	// function User(Id,Email,Matkhau,Hoten){
+	// 	this.id=Id;
+	// 	this.email=Email;
+	// 	this.matkhau=Matkhau;
+	// 	this.hoten=Hoten;
+	// }
+	// var listusers=[new User("1","user1@gmail.com","123456","user1"),
+	// 				new User("2","user2@gmail.com","456789","user2")
+	// 			  ];
+	// function DangNhap(ID) {
+	// 	this.id = ID;
+	// }
+	// console.log(listusers)
+	// console.log(JSON.parse(localStorage.getItem("user")));
+	
 	$("#btnDangNhap").click(function () {
 		var found=false;
+		var user = new User();
 		for (var i = 0; i < listusers.length; i++) {
 			if($("#EmailLogin").val()==listusers[i].email && $("#PasswordLogin").val()==listusers[i].matkhau){
 				found=true;
-				$("#demo").text(listusers[i].hoten);
+				user.id = listusers[i].id;
+				user.email = listusers[i].email;
+				user.matkhau = listusers[i].matkhau;
+				user.hoten = listusers[i].hoten;
+				user.SoDT = listusers[i].SoDT;
+				user.diem = listusers[i].diem;
 				break;
 			}
 		}
+		$("#showTen").text(user.hoten);
 		if(found==false)
 			alert("Email/Mật khẩu chưa đúng");
 		else{
+			SaveLocalStorage(user, "user");
+			// localStorage.setItem("user", JSON.stringify(user));
+			// console.log(JSON.parse(localStorage.getItem("user")));
 			$("#loginModal").modal("hide");
 			$("#taikhoan").show();
-			$("#login").hide();
+			$("#loginDiv").hide();
 			alert("Bạn đã đăng nhập thành công");
+
 		}
 	})
 
@@ -150,8 +180,9 @@ $("#btnSend").click(function() {
 $("#btnDoiMatKhau").click(function () {
 	var len=$("#fPassword").find("input").length;
 	var err="";
-	var found=false,check=false;
-	var mail="user1@gmail.com";
+	var found=false,check=false, checkTK = false;
+	// var mail="user1@gmail.com";
+	var user = getDataFromLocal("user");
 	for (var i = 0; i <len; i++) {
 			if($("#fPassword input").eq(i).val().replace(/^\s+|\s+$/g, "")==0){
 				found=true;
@@ -165,24 +196,29 @@ $("#btnDoiMatKhau").click(function () {
 		err="Vui lòng nhập đầy đủ thông tin \n";
 	else{
 		for( var i=0; i<listusers.length;i++){
-			if( listusers[i].email==mail && $("#PasswordRecent").val() == listusers[i].matkhau){
-				check=true;
+			if( listusers[i].email==user.email && $("#PasswordRecent").val() == listusers[i].matkhau){
+				checkTK = true;
 				break;
-			}else{
-				err+="Mật khẩu cũ chưa đúng \n";
-				check=false;
-			}
-			if(check==false){
-				if(checkPass($("#NewPasswor1").val())==false)
-					err+="Mật khẩu phải chứa ít nhất 6 ký tự \n"
-				if(checkpass($("#NewPasswor1").val(),$("#NewPasswor2").val())==false)
-					err+="Mật khẩu nhập lại chưa khớp \n";
 			}
 		}
+		if(checkTK == false) {
+			err+="Mật khẩu cũ chưa đúng \n";
+		}
+		if(check==false){
+			if(checkPass($("#NewPasswor1").val())==false)
+				err+="Mật khẩu phải chứa ít nhất 6 ký tự \n"
+			if(checkpass($("#NewPasswor1").val(),$("#NewPasswor2").val())==false)
+				err+="Mật khẩu nhập lại chưa khớp \n";
+		}
+	}
+	if(err=="") {
+		alert("Đổi mật khẩu thành công");
+		editMK(user.id, $("#NewPasswor2").val());
+		user.matkhau = $("#NewPasswor2").val();
+		SaveLocalStorage(user, "user");
+		location.reload();
 	}
 
-	if(err=="")
-		alert("Đổi mật khẩu thành công");
 	else
 		alert(err);
 })
@@ -192,11 +228,13 @@ $("#btnSuaThongTin").click(function() {
 	$("#Phonen-Pr").prop('readonly',false);
 	$("#Email-Pr").prop('readonly',false);
 	$("#btnLuuThongTin").show();
+	$(this).hide();
 })
 $("#btnLuuThongTin").click(function() {
 	var len=$("#fProfile").find("input").length;
 	var err="";
 	var found=false,check=false;
+	var user = getDataFromLocal("user");
 	for (var i = 0; i <len; i++) {
 			if($("#fProfile input").eq(i).val().replace(/^\s+|\s+$/g, "")==0){
 				found=true;
@@ -206,7 +244,8 @@ $("#btnLuuThongTin").click(function() {
 				found=false;
 			}
 		}
-	if(found==true)
+		// console.log(found);
+	if(found==false)
 		err="Vui lòng nhập thông tin đầy đủ";
 	else{
 		if(checkphone($("#Phonen-Pr").val()) ==false || $("#Phonen-Pr").val().length!=10 )
@@ -219,14 +258,18 @@ $("#btnLuuThongTin").click(function() {
 	else{
 		var confir = confirm("Bạn muốn lưu thông tin đã thay đổi?");
 		if(confir==true){
+			user.hoten = $("#Fullname-Pr").val();
+			user.SoDT = $("#Phonen-Pr").val();
+			user.email = $("#Email-Pr").val();
+			editUser(user);
+			SaveLocalStorage(user, "user");
 			alert("Lưu thông tin thành công");
-			$("#Fullname-Pr").prop('readonly',true);
-		}
-		else
 			$("#Fullname-Pr").prop('readonly',true);
 			$("#Phonen-Pr").prop('readonly',true);
 			$("#Email-Pr").prop('readonly',true);
 			$("#btnLuuThongTin").hide();
+			$("#btnSuaThongTin").show();
+		}
 	}		
 })
 /* --------------------------------------------------XÓA----------------------------------------------------------------- */
@@ -238,6 +281,10 @@ $("button[btn-name=xoa]").click(function () {
 	if(len1 <1){
 		$("#tCTGH").hide();
 		$("#Giohangtrong").removeClass("d-none");
+		deleteObj("localGioHang");
+		$("#amount").attr("data-soluong", 0).text(0);
+		$('.shopping-desc > p').show();
+        $('.shopping-desc div').hide();
 	}
 })
 /* --------------------------------------------------TIẾN HÀNH ĐẶT HÀNG----------------------------------------------------------------- */
@@ -286,11 +333,8 @@ function TotalPrice() {
 	$("#f-total-price").html(PriceFormat(total,"VNĐ"));
 	$("#f-total-price").attr("data-price",total);
 	var Ftotal=parseFloat($("#f-total-price").attr("data-price"));
-	console.log(Ftotal);
 	var promotion= parseFloat($("#promotion").attr("data-promotion"));
-	console.log(promotion);
 	var Ltotal=Ftotal- Ftotal*promotion;
-	console.log(Ltotal);
 	$("#l-total-price").html(PriceFormat(Ltotal,"VNĐ"));
 	$("#l-total-price").attr("data-price",Ltotal);
 }

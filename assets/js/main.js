@@ -69,17 +69,7 @@ $(document).ready(function () {
         $(this).html(PriceFormat(total, " VND"));
     })
 
-    //size
-    $('input[type=radio][name=sizename]').change(function() {
-        if (this.value == 'S') {
-            $(".product-price").hide();
-            $(".product-price[data-size=S]").show();
-        }
-        else if (this.value == 'G') {
-            $(".product-price").hide();
-            $(".product-price[data-size=G]").show();
-        }
-    });
+    
 
     //số lượng
     
@@ -96,44 +86,9 @@ $(document).ready(function () {
         $('input[name=amount]').val(amount);
     })
 
-    $(document).on('click', '#toppings .dropdown-menu', function (e) {
-        e.stopPropagation();
-    });
-    $("input[data-type=topping]").prop("checked", false);
-    $('input[data-type=topping]').change(function(){
-        var div = $("<div>")
-        var num = $('#plus').attr("data-plus");
-        var name = $(this).attr("data-name");
-        var price = $(this).attr("data-price");
-        
-        var plus = "<span class='text-success'>+ " + PriceFormat(price, " VND") + "</span> " + name;
-        if ($(this).is(':checked')) {
-            if(num == 0){
-                $("#plus").empty();
-            } 
-            num++
-            div.attr("data-name", name).html(plus);
-            $("#plus").attr("data-plus",num).append(div);
-        } else {
-            num--
-            $("#plus").attr("data-plus",num);
-            $("div[data-name='"+name+"']").remove();
-        }
-    })
+    
     $(document).click(function(){
         $('.shopping-desc').hide();
-    })
-    $("#add-product").on("click", function(e){
-        e.stopPropagation();
-        var selectAmount = parseInt($('input[name=amount]').val());
-        var currentAmount = parseInt($("#amount").attr("data-soluong"));
-        var total = selectAmount + currentAmount;
-        $("#amount").attr("data-soluong", total).text(total);
-        
-        navbar.removeClass('scrollUp').addClass('scrollDown');
-        $('.shopping-desc').show();
-        $('.shopping-desc > p').hide();
-        $('.shopping-desc div').show();
     })
 
     
@@ -145,6 +100,46 @@ $(document).ready(function () {
             'opacity': 0
         });
     });
+    // deleteObj("localUserList")
+    if(CheckExistLocal("user")) {
+        var user = getDataFromLocal("user");
+        $("#taikhoan").show();
+        $("#loginDiv").hide();
+        $("#showTen").text(user.hoten);
+    }
+    $("#btnDangXuat").click(function(){
+        deleteObj("user");
+        $("#taikhoan").hide();
+        $("#loginDiv").show();
+    })
+    
+    $(".chitiet").each(function(){
+        $(this).click(function(){
+            deleteObj("SanPham");
+            var id = $(this).attr("data-id");
+            var sp = new SanPham();
+            for (var i = 0; i < listSP.DS.length; i++){
+                if(id == listSP.DS[i].id) {
+                    sp.id = listSP.DS[i].id;
+                    sp.ten = listSP.DS[i].ten;
+                    sp.giaS = listSP.DS[i].giaS;
+                    sp.giaG = listSP.DS[i].giaG;
+                    sp.img = listSP.DS[i].img;
+                    // sp.topping = null;
+                    break;
+                }
+            }
+            SaveLocalStorage(sp, "SanPham");
+        })
+    })
+    
+    var gh = getDataFromLocal("localGioHang");
+    if(gh.length > 0) {
+        $('.shopping-desc > p').hide();
+        $('.shopping-desc div').show().find("p").hide();
+        
+    $("#amount").attr("data-soluong", gh.length).text(gh.length);
+    }
 });
 
 function PriceFormat(price, currency){

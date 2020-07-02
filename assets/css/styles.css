@@ -159,7 +159,7 @@ li.custom-control:hover {
     line-height: 40px;
 }
 .navb-drop {
-    border-left: none;
+    border-left: none!important;
 }
 a.header-cart, a.navb-link {
     color: white;
@@ -348,6 +348,14 @@ a.navb-link:hover {
     color: white;
     text-shadow: 0 0 5px #333;
 }
+.section-blog img {
+    max-width: 450px;
+    height: auto;
+}
+.section-blog p {
+    margin-bottom: 1.6rem;
+    font-size: 1.2rem;
+}
 /* END TOP */
 /* SECTION MENU DRINKS */
 .product-block .product-caption {
@@ -360,7 +368,8 @@ a.navb-link:hover {
 .product-details .product-name {
     font-size: 2rem;
 }
-.product-details .product-price span:first-child {
+.product-details .product-price span:first-child,
+.product-details .p-price span:first-child {
     color: brown;
     font-size: 1.4rem;
 }
@@ -458,7 +467,7 @@ table#tCTGH tfoot tr:last-child{
     box-shadow: none;
 }
 .form-control:disabled, .form-control[readonly] {
-    background-color: transparent;
+    /* background-color: transparent; */
     opacity: 1;
 }
 .input {

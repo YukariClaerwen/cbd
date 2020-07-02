@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-3 nav-login">
+            <div id="loginDiv" class="px-3 nav-login">
                 <button id="login" type="button" class="btn btn-pri btn-border" data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
             </div>
             <div class="px-3 navb-drop" id="taikhoan" style="display: none;">
@@ -98,10 +98,10 @@
     </div>
 	<!-- End head background -->
     
-    <div class="container-fluid">
+    <div class="container">
     	<div class="row row-cols-2">
     		<!-- Bảng giỏ hàng -->
-    		<div class="col ">
+    		<div class="col py-5 col-md-7">
 				<table id="tCTGH" class="mx-auto">
                     <thead>
                         <tr>
@@ -109,7 +109,7 @@
                             <th>&nbsp;</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
-                            <th>Thành tiền</th>
+                            <th class="text-right">Thành tiền</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -126,7 +126,7 @@
                             <td>
                                 1
                             </td>
-                            <td total-price="total" total-price="total">
+                            <td total-price="total" class="text-right">
                                 <span class="product-price" data-price="39000">39000</span>
                             </td>
                         </tr>
@@ -149,30 +149,24 @@
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td colspan="3">&nbsp;</td>
-                            <td colspan="1">Tổng cộng</td>
+                        <tr class="text-right">
+                            <td colspan="4" class="text-right">Tổng cộng</td>
                             <td colspan="1" class="text-right"><span class="product-price" id="f-total-price" data-price="0" ></span></td>
-                            <td colspan="1">&nbsp;</td>
                         </tr>
-                        <tr>
-                            <td colspan="3">&nbsp;</td>
-                            <td colspan="1">Giảm giá</td>
+                        <tr class="text-right">
+                            <td colspan="4">Giảm giá</td>
                             <td colspan="1" class="text-right"><span  id="promotion" data-promotion=0.15>15%</span></td>
-                            <td colspan="1">&nbsp;</td>
                         </tr>
-                        <tr>
-                            <td colspan="3">&nbsp;</td>
-                            <td colspan="1" >Tổng tiền thanh toán</td>
-                            <td colspan="1" class="text-right"><span class="product-price" id="l-total-price" data-price="0"></span></td>
-                            <td colspan="1">&nbsp;</td>
+                        <tr class="text-right">
+                            <td colspan="4" >Tổng tiền thanh toán</td>
+                            <td colspan="1" class="text-right text-danger"><span class="product-price" id="l-total-price" data-price="0"></span></td>
                         </tr>
                     </tfoot>
                 </table>	    			
     		</div>
     		<!-- Form đặt hàng -->
-    		<div class="col bg-secondary">
-    			<h1 class="display-2 text-white">Thông tin giao hàng</h1>
+    		<div class="col py-5 col-md-5">
+    			<h1 class="display-5 mb-4">Thông tin giao hàng</h1>
 				<form id="fTTGH">
 	                <div class="form-group mt-2">
 	                    <input type="text" class="form-control input" id="Fullname-GH" aria-describedby="fullnameHelp">
@@ -296,7 +290,11 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/libs/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="assets/libs/popper/popper.min.js"></script>
-    <script src="assets/libs/boostrap/js/bootstrap.min.js"></script>
+    <script src="assets/libs/boostrap/js/bootstrap.js"></script>
+    <script src="assets/js/localStorage.js"></script>
+    <script src="assets/js/objs.js"></script>
+    <script src="assets/js/Lists.js"></script>
+    <script src="assets/js/action.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/js.js"></script>
 
